@@ -15,12 +15,23 @@
     </div>
   </header>
   <main>
-    <section>House Cards</section>
+    <section>
+      <h1>The House</h1>
+      <div id="house-area">
+        <div class="game-card" id="house-card-1">Card 1</div>
+        <div class="game-card" id="house-card-2">Card 2</div>
+        <div class="score-area">
+          <h2>House Score</h2>
+          <div id="house-score">0</div>
+        </div>
+      </div>
+    </section>
     <section>
       <h1>The Player</h1>
       <div id="player-area">
         <div class="game-card" id="player-card-1">Card 1</div>
         <div class="game-card" id="player-card-2">Card 2</div>
+        <div class="game-card" id="player-card-3">0</div>
         <div class="score-area">
           <h2>Player Score</h2>
           <div id="player-score">0</div>
@@ -30,6 +41,8 @@
     <section>
       <div id="deal-button-area">
         <button id="deal-button" data-type="submit">Deal</button>
+        <button id="hit-button" data-type="submit">HIT</button>
+        <button id="stand-button" data-type="submit">STAND</button>
       </div>
     </section>
     <section>Total Score</section>
