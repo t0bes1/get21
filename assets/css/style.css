@@ -23,6 +23,10 @@ h2 {
     padding: 1%;
 }
 
+li {
+    padding: 1%;
+}
+
 p {
     padding: 1%;
 }
@@ -69,14 +73,19 @@ img {
 
 dialog {
     position: absolute;
-    left: 100px;
-    top: 100px;
+    left: 25%;
+    top: 15%;
     font-family: 'Inter';
+    font-size: 150%;
     color: white;
     width: 50%;
-    background: blue;
-    border: solid;
+    background: darkslategrey;
+    border: none;
     padding: 1%;
+}
+
+dialog::backdrop {
+    background-color: hsla(230, 100%, 50%, 0.25);
 }
 
 /*house & player game areas*/
