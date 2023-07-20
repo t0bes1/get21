@@ -211,7 +211,7 @@ function checkGameResult(houseScore) {
 
 function growScore() {
     let oldScore = parseInt(document.getElementById("score-box").innerText);
-    let newScore = oldScore + 5;
+    let newScore = oldScore + 3;
     document.getElementById("score-box").innerText = newScore;
     checkTotal(newScore);
 }
