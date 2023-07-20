@@ -9,10 +9,16 @@
 }
 
 h1 {
-    margin-top: 20px;
     font-family: 'Inter';
     color: darkgray;
-    background-color: blue;
+    text-align: center;
+    padding: 1%;
+}
+
+h2 {
+    font-family: 'Inter';
+    font-size: 120%;
+    color: white;
     text-align: center;
     padding: 1%;
 }
@@ -23,19 +29,68 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: gold;
     padding: 1%;
+    margin-bottom: 10px;
 }
 
 #top-logo {
     font-family: 'Inter';
-    background-color: gold;
     width: 50%;
-    font-size: 300%;
+    font-size: 500%;
     color: darkgrey;
     text-align: center;
 }
 
+#info-modal {
+    position: relative;
+    font-size: 200%;
+    display: flex;
+    align-items: center;
+    color: darkgrey;
+    background-color: gold;
+    padding: 1%;
+    border: none;
+}
+
+dialog {
+    position: absolute;
+    font-family: 'Inter';
+    color: white;
+    width: 50%;
+    background: gold;
+    border: solid;
+    border-color: darkgoldenrod;
+    padding: 1%;
+}
+
 /*house & player game areas*/
+
+#house-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#house-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+#player-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#player-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-bottom: 10px;
+}
 
 .game-area {
     font-family: 'Inter';
@@ -62,25 +117,43 @@ h1 {
     color: white;
     font-size: large;
     text-align: center;
-    vertical-align: middle;
     background-color: blue;
     border-radius: 50%;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+#house-score {
+    font-size: 200%;
+}
+
+#player-score {
+    font-size: 200%;
+}
+
+
 /*game buttons*/
+
+#deal-button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 #deal-button-area {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 5%;
+    width: 80%;
+    padding: 1%;
 }
 
 .game-button {
     font-family: 'Inter';
     font-size: 200%;
-    width: 10%;
+    width: 20%;
     height: 100px;
     color: white;
     text-align: center;
@@ -91,35 +164,58 @@ h1 {
     box-shadow: 5px 5px darkblue;
 }
 
-#result-box {
-    background-color: black;
-    color: white;
-    font-family: 'Inter';
-    font-size: large;
-    width: 10%;
-    height: 100px;
-    color: darkgrey;
-    text-align: center;
-    padding: 1%;
+#hit-button {
+    visibility: hidden;
 }
 
-/*score*/
+#stand-button {
+    visibility: hidden;
+}
+
+#reset-button {
+    visibility: hidden;
+}
+
+/*score section*/
 
 #score-area {
     font-family: 'Inter';
     margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 1%;
 }
 
+#result-box {
+    background-color: darkblue;
+    color: white;
+    font-family: 'Inter';
+    font-size: 200%;
+    width: 30%;
+    height: 100px;
+    text-align: center;
+    padding: 1%;
+    border: solid;
+    border-width: 10px;
+    border-color: blue;
+
+}
+
 #score-box {
-    background-color: gold;
-    width: 50%;
-    font-size: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    font-size: 300%;
+    vertical-align: middle;
     color: darkgrey;
     text-align: center;
+    border: solid;
+    border-width: 10px;
+    border-color: gold;
 }
 
 /*footer*/
@@ -128,13 +224,13 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: black;
+    background-color: gold;
     padding: 1%;
 }
 
 #footer-message {
     background-color: gold;
-    width: 50%;
+    font-family: 'Inter';
     color: darkgrey;
     text-align: center;
 }

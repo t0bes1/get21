@@ -23,6 +23,15 @@ resetButton.addEventListener("click", function () {
     resetGame();
 });
 
+let infoButton = document.getElementById('info-modal');
+infoButton.addEventListener("click", function () {
+    showModal();
+});
+
+/**
+ * cards variable with all 52 possible cards, each with a value for the game
+ */
+
 const cards = [
     { 'rank': 'Ace of hearts', 'value': 11 },
     { 'rank': 'Two of hearts', 'value': 2 },
@@ -79,7 +88,16 @@ const cards = [
 ];
 
 /**
- * player cards
+ * modal
+ */
+function showModal() {
+    const dialog = document.querySelector("dialog");
+    dialog.show();
+}
+
+
+/**
+ * game starts with player receiving two cards
  */
 
 function playerCards() {
@@ -100,11 +118,16 @@ function displayPlayerCards(operand1, operand2) {
     document.getElementById('player-score').textContent = playerCard1.value + playerCard2.value;
 }
 
+/**
+ * house cards phase; house receives two cards
+ */
+
 function houseCards() {
     let num4 = Math.floor(Math.random() * 10) + 1;
     let num5 = Math.floor(Math.random() * 10) + 1;
 
     displayHouseCards(num4, num5);
+
     hitButton.style.visibility = "hidden";
     standButton.style.visibility = "hidden";
 }
@@ -119,6 +142,10 @@ function displayHouseCards(operand1, operand2) {
     checkGameResult(houseScore);
 }
 
+/**
+ * player gets an extra card if choosing hit
+ */
+
 function hitCard() {
     let playercard3 = cards[Math.floor(Math.random() * 52)];
     document.getElementById('player-card-3').textContent = playercard3.rank;
@@ -127,12 +154,20 @@ function hitCard() {
     calculatePlayerTotal(playercard3);
 }
 
+/**
+ * new player total is calculated including hit card
+ */
+
 function calculatePlayerTotal(playercard3) {
     let finalPlayerScore = parseInt(document.getElementById('player-score').textContent) + playercard3.value;
     console.log(finalPlayerScore);
     document.getElementById('player-score').textContent = finalPlayerScore;
     checkPlayerTotal(finalPlayerScore);
 }
+
+/**
+ * player total is checked whether they are bust. If so, end game. If not, game continues.
+ */
 
 function checkPlayerTotal(finalPlayerScore) {
     if (finalPlayerScore > 21) {
@@ -143,6 +178,10 @@ function checkPlayerTotal(finalPlayerScore) {
         houseCards();
     }
 }
+
+/**
+ * player total is compared to house total and game result is evaluated.
+ */
 
 function checkGameResult(houseScore) {
     let playerResult = parseInt(document.getElementById('player-score').innerText);
@@ -164,12 +203,28 @@ function checkGameResult(houseScore) {
 
 function growScore() {
     let oldScore = parseInt(document.getElementById("score-box").innerText);
-    document.getElementById("score-box").innerText = ++oldScore;
+    let newScore = oldScore + 5;
+    document.getElementById("score-box").innerText = newScore;
+    checkTotal(newScore);
 }
 
 function reduceScore() {
     let oldScore = parseInt(document.getElementById("score-box").innerText);
     document.getElementById("score-box").innerText = oldScore - 1;
+}
+
+/**
+ * checks whether player has reached 10 points and won the game
+ */
+
+function checkTotal(newScore) {
+    if (newScore > 9) {
+        document.getElementById('result-box').textContent = "You've done it, 10 points!";
+        resetButton.style.visibility = "visible";
+        document.getElementById('score-box').style.visibility = "hidden";
+        document.getElementById('score-box').textContent = 0;
+    }
+    else (console.log("live"));
 }
 
 /**
@@ -187,4 +242,5 @@ function resetGame() {
     document.getElementById('player-card-3').textContent = "";
     document.getElementById('player-score').textContent = 0;
     document.getElementById('result-box').textContent = "";
+    document.getElementById('score-box').style.visibility = "visible";
 }

@@ -12,59 +12,73 @@
 <body>
   <header>
     <div id="top-bar">
+      <button id="info-modal"><i class="fa-solid fa-circle-info"></i></button>
       <div id="top-logo">Get 21</div>
     </div>
   </header>
   <main>
-    <section>
+    <section id="house-section">
       <h1>The House</h1>
-      <div class="game-area">
-        <div class="game-card" id="house-card-1"></div>
-        <div class="game-card" id="house-card-2"></div>
-        <div class="game-score-area">
-          <h2>House Score</h2>
-          <div id="house-score">0</div>
+      <div id="house-container">
+        <div class="game-area">
+          <div class="game-card" id="house-card-1"></div>
+          <div class="game-card" id="house-card-2"></div>
+          <div class="game-score-area">
+            <h2>House Score</h2>
+            <div id="house-score">0</div>
+          </div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="player-section">
       <h1>The Player</h1>
-      <div class="game-area">
-        <div class="game-card" id="player-card-1"></div>
-        <div class="game-card" id="player-card-2"></div>
-        <div class="game-card" id="player-card-3"></div>
-        <div class="game-score-area">
-          <h2>Player Score</h2>
-          <div id="player-score">0</div>
+      <div id="player-container">
+        <div class="game-area">
+          <div class="game-card" id="player-card-1"></div>
+          <div class="game-card" id="player-card-2"></div>
+          <div class="game-card" id="player-card-3"></div>
+          <div class="game-score-area">
+            <h2>Player Score</h2>
+            <div id="player-score">0</div>
+          </div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="deal-button-section">
       <div id="deal-button-area">
         <button class="game-button" id="deal-button" data-type="submit">Deal</button>
         <button class="game-button" id="hit-button" data-type="submit">HIT</button>
         <button class="game-button" id="stand-button" data-type="submit">STAND</button>
         <button class="game-button" id="reset-button" data-type="submit">New HAND</button>
-        <div id="result-box"></div>
       </div>
     </section>
     <section>
       <div id="score-area">
-        <h2>Your Score: </h2>
+        <div id="result-box"></div>
         <div id="score-box">0
         </div>
       </div>
     </section>
   </main>
-  <aside>Rules pop up</aside>
+  <aside>
+    <dialog id="rules-modal">
+      <p>Get 21 Rules: The goal of Get21 is to get a hand closer to 21 than the house's hand without going over 21.</p>
+      <p>Aces is worth 11, Face cards (jack, queen, king) are worth 10. All other cards are worth their face value.</p>
+      <p>Players can hit (take another card) or stand (keep their current hand)</p>
+      <p>The player wins if their hand is closer to 21 than the dealer's hand without going over 21.</p>
+      <p>If you win a hand you score 1 point, if you lose a hand, you lose 1 point. Get to 10 points to win the game.
+      </p>
+    </dialog>
+  </aside>
   <footer>
     <div id="footer-bar">
       <div id="footer-message">
-        Made by Toby Bentall (2023)
+        Made by Toby Bentall (copyright 2023)
       </div>
     </div>
   </footer>
   <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/042d21b2dd.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
