@@ -131,8 +131,8 @@ dialog {
 }
 
 .image-container {
-    height: 150px;
-    width: 100px;
+    height: 121px;
+    width: 83px;
     background-color: blueviolet;
 }
 
@@ -219,6 +219,10 @@ dialog {
 
 #result-box {
     background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
     color: white;
     font-family: 'Inter';
     font-size: 200%;
@@ -236,9 +240,9 @@ dialog {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    vertical-align: middle;
     width: 30%;
     font-size: 300%;
-    vertical-align: middle;
     color: darkgrey;
     text-align: center;
     border: solid;
