@@ -23,6 +23,10 @@ h2 {
     padding: 1%;
 }
 
+p {
+    padding: 1%;
+}
+
 /*top bar*/
 
 #top-bar {
@@ -43,7 +47,6 @@ h2 {
 }
 
 #info-modal {
-    position: relative;
     font-size: 200%;
     display: flex;
     align-items: center;
@@ -55,12 +58,13 @@ h2 {
 
 dialog {
     position: absolute;
+    left: 100px;
+    top: 100px;
     font-family: 'Inter';
     color: white;
     width: 50%;
-    background: gold;
+    background: blue;
     border: solid;
-    border-color: darkgoldenrod;
     padding: 1%;
 }
 

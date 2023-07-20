@@ -23,9 +23,10 @@ resetButton.addEventListener("click", function () {
     resetGame();
 });
 
+const dialog = document.querySelector("dialog");
 let infoButton = document.getElementById('info-modal');
 infoButton.addEventListener("click", function () {
-    showModal();
+    dialog.showModal();
 });
 
 /**
@@ -90,11 +91,18 @@ const cards = [
 /**
  * modal
  */
-function showModal() {
-    const dialog = document.querySelector("dialog");
-    dialog.show();
-}
 
+dialog.addEventListener("click", e => {
+    const dialogDimensions = dialog.getBoundingClientRect();
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+    ) {
+        dialog.close();
+    }
+});
 
 /**
  * game starts with player receiving two cards
