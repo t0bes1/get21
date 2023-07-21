@@ -142,7 +142,7 @@ dialog::backdrop {
 .image-container {
     height: 121px;
     width: 83px;
-    background-color: blueviolet;
+    visibility: hidden;
 }
 
 .game-score-area {
