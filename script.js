@@ -34,58 +34,58 @@ infoButton.addEventListener("click", function () {
  */
 
 const cards = [
-    { 'rank': 'Ace of hearts', 'value': 11 },
-    { 'rank': 'Two of hearts', 'value': 2 },
-    { 'rank': 'Three of hearts', 'value': 3 },
-    { 'rank': 'Four of hearts', 'value': 4 },
-    { 'rank': 'Five of hearts', 'value': 5 },
-    { 'rank': 'Six of hearts', 'value': 6 },
-    { 'rank': 'Seven of hearts', 'value': 7 },
-    { 'rank': 'Eight of hearts', 'value': 8 },
-    { 'rank': 'Nine of hearts', 'value': 9 },
-    { 'rank': 'Ten of hearts', 'value': 10 },
-    { 'rank': 'Jack of hearts', 'value': 10 },
-    { 'rank': 'Queen of hearts', 'value': 10 },
-    { 'rank': 'King of hearts', 'value': 10 },
-    { 'rank': 'Ace of clubs', 'value': 11 },
-    { 'rank': 'Two of clubs', 'value': 2 },
-    { 'rank': 'Three of clubs', 'value': 3 },
-    { 'rank': 'Four of clubs', 'value': 4 },
-    { 'rank': 'Five of clubs', 'value': 5 },
-    { 'rank': 'Six of clubs', 'value': 6 },
-    { 'rank': 'Seven of clubs', 'value': 7 },
-    { 'rank': 'Eight of clubs', 'value': 8 },
-    { 'rank': 'Nine of clubs', 'value': 9 },
-    { 'rank': 'Ten of clubs', 'value': 10 },
-    { 'rank': 'Jack of clubs', 'value': 10 },
-    { 'rank': 'Queen of clubs', 'value': 10 },
-    { 'rank': 'King of clubs', 'value': 10 },
-    { 'rank': 'Ace of diamonds', 'value': 11 },
-    { 'rank': 'Two of diamonds', 'value': 2 },
-    { 'rank': 'Three of diamonds', 'value': 3 },
-    { 'rank': 'Four of diamonds', 'value': 4 },
-    { 'rank': 'Five of diamonds', 'value': 5 },
-    { 'rank': 'Six of diamonds', 'value': 6 },
-    { 'rank': 'Seven of diamonds', 'value': 7 },
-    { 'rank': 'Eight of diamonds', 'value': 8 },
-    { 'rank': 'Nine of diamonds', 'value': 9 },
-    { 'rank': 'Ten of diamonds', 'value': 10 },
-    { 'rank': 'Jack of diamonds', 'value': 10 },
-    { 'rank': 'Queen of diamonds', 'value': 10 },
-    { 'rank': 'King of diamonds', 'value': 10 },
-    { 'rank': 'Ace of spades', 'value': 11 },
-    { 'rank': 'Two of spades', 'value': 2 },
-    { 'rank': 'Three of spades', 'value': 3 },
-    { 'rank': 'Four of spades', 'value': 4 },
-    { 'rank': 'Five of spades', 'value': 5 },
-    { 'rank': 'Six of spades', 'value': 6 },
-    { 'rank': 'Seven of spades', 'value': 7 },
-    { 'rank': 'Eight of spades', 'value': 8 },
-    { 'rank': 'Nine of spades', 'value': 9 },
-    { 'rank': 'Ten of spades', 'value': 10 },
-    { 'rank': 'Jack of spades', 'value': 10 },
-    { 'rank': 'Queen of spades', 'value': 10 },
-    { 'rank': 'King of spades', 'value': 10 },
+    { 'rank': 'Ace of hearts', 'value': 11, 'img': '/assets/images/ace_of_hearts.png', },
+    { 'rank': 'Two of hearts', 'value': 2, 'img': '/assets/images/2_of_hearts.png', },
+    { 'rank': 'Three of hearts', 'value': 3, 'img': '/assets/images/3_of_hearts.png', },
+    { 'rank': 'Four of hearts', 'value': 4, 'img': '/assets/images/4_of_hearts.png', },
+    { 'rank': 'Five of hearts', 'value': 5, 'img': '/assets/images/5_of_hearts.png', },
+    { 'rank': 'Six of hearts', 'value': 6, 'img': '/assets/images/6_of_hearts.png', },
+    { 'rank': 'Seven of hearts', 'value': 7, 'img': '/assets/images/7_of_hearts.png', },
+    { 'rank': 'Eight of hearts', 'value': 8, 'img': '/assets/images/8_of_hearts.png', },
+    { 'rank': 'Nine of hearts', 'value': 9, 'img': '/assets/images/9_of_hearts.png', },
+    { 'rank': 'Ten of hearts', 'value': 10, 'img': '/assets/images/10_of_hearts.png', },
+    { 'rank': 'Jack of hearts', 'value': 10, 'img': '/assets/images/jack_of_hearts2.png', },
+    { 'rank': 'Queen of hearts', 'value': 10, 'img': '/assets/images/queeen_of_hearts2.png', },
+    { 'rank': 'King of hearts', 'value': 10, 'img': '/assets/images/king_of_hearts2.png', },
+    { 'rank': 'Ace of clubs', 'value': 11, 'img': '/assets/images/ace_of_clubs.png', },
+    { 'rank': 'Two of clubs', 'value': 2, 'img': '/assets/images/2_of_clubs.png', },
+    { 'rank': 'Three of clubs', 'value': 3, 'img': '/assets/images/3_of_clubs.png', },
+    { 'rank': 'Four of clubs', 'value': 4, 'img': '/assets/images/4_of_clubs.png', },
+    { 'rank': 'Five of clubs', 'value': 5, 'img': '/assets/images/5_of_clubs.png', },
+    { 'rank': 'Six of clubs', 'value': 6, 'img': '/assets/images/6_of_clubs.png', },
+    { 'rank': 'Seven of clubs', 'value': 7, 'img': '/assets/images/7_of_clubs.png', },
+    { 'rank': 'Eight of clubs', 'value': 8, 'img': '/assets/images/8_of_clubs.png', },
+    { 'rank': 'Nine of clubs', 'value': 9, 'img': '/assets/images/9_of_clubs.png', },
+    { 'rank': 'Ten of clubs', 'value': 10, 'img': '/assets/images/10_of_clubs.png', },
+    { 'rank': 'Jack of clubs', 'value': 10, 'img': '/assets/images/jack_of_clubs2.png', },
+    { 'rank': 'Queen of clubs', 'value': 10, 'img': '/assets/images/queen_of_clubs2.png', },
+    { 'rank': 'King of clubs', 'value': 10, 'img': '/assets/images/king_of_clubs2.png', },
+    { 'rank': 'Ace of diamonds', 'value': 11, 'img': '/assets/images/ace_of_diamonds.png', },
+    { 'rank': 'Two of diamonds', 'value': 2, 'img': '/assets/images/2_of_diamonds.png', },
+    { 'rank': 'Three of diamonds', 'value': 3, 'img': '/assets/images/3_of_diamonds.png', },
+    { 'rank': 'Four of diamonds', 'value': 4, 'img': '/assets/images/4_of_diamonds.png', },
+    { 'rank': 'Five of diamonds', 'value': 5, 'img': '/assets/images/5_of_diamonds.png', },
+    { 'rank': 'Six of diamonds', 'value': 6, 'img': '/assets/images/6_of_diamonds.png', },
+    { 'rank': 'Seven of diamonds', 'value': 7, 'img': '/assets/images/7_of_diamonds.png', },
+    { 'rank': 'Eight of diamonds', 'value': 8, 'img': '/assets/images/8_of_diamonds.png', },
+    { 'rank': 'Nine of diamonds', 'value': 9, 'img': '/assets/images/9_of_diamonds.png', },
+    { 'rank': 'Ten of diamonds', 'value': 10, 'img': '/assets/images/10_of_diamonds.png', },
+    { 'rank': 'Jack of diamonds', 'value': 10, 'img': '/assets/images/jack_of_diamonds2.png', },
+    { 'rank': 'Queen of diamonds', 'value': 10, 'img': '/assets/images/queen_of_diamonds2.png', },
+    { 'rank': 'King of diamonds', 'value': 10, 'img': '/assets/images/king_of_diamonds2.png', },
+    { 'rank': 'Ace of spades', 'value': 11, 'img': '/assets/images/ace_of_spades.png', },
+    { 'rank': 'Two of spades', 'value': 2, 'img': '/assets/images/2_of_spades.png', },
+    { 'rank': 'Three of spades', 'value': 3, 'img': '/assets/images/3_of_spades.png', },
+    { 'rank': 'Four of spades', 'value': 4, 'img': '/assets/images/4_of_spades.png', },
+    { 'rank': 'Five of spades', 'value': 5, 'img': '/assets/images/5_of_spades.png', },
+    { 'rank': 'Six of spades', 'value': 6, 'img': '/assets/images/6_of_spades.png', },
+    { 'rank': 'Seven of spades', 'value': 7, 'img': '/assets/images/7_of_spades.png', },
+    { 'rank': 'Eight of spades', 'value': 8, 'img': '/assets/images/8_of_spades.png', },
+    { 'rank': 'Nine of spades', 'value': 9, 'img': '/assets/images/9_of_spades.png', },
+    { 'rank': 'Ten of spades', 'value': 10, 'img': '/assets/images/10_of_spades.png', },
+    { 'rank': 'Jack of spades', 'value': 10, 'img': '/assets/images/jack_of_spades2.png', },
+    { 'rank': 'Queen of spades', 'value': 10, 'img': '/assets/images/queen_of_spades2.png', },
+    { 'rank': 'King of spades', 'value': 10, 'img': '/assets/images/king_of_spades2.png', },
 ];
 
 /**
@@ -121,8 +121,8 @@ function playerCards() {
 function displayPlayerCards(operand1, operand2) {
     let playerCard1 = cards[operand1 - 1];
     let playerCard2 = cards[operand2 - 1];
-    document.getElementById('player-card-1').textContent = playerCard1.rank;
-    document.getElementById('player-card-2').textContent = playerCard2.rank;
+    document.getElementById('player-card-1-img').src = playerCard1.img;
+    document.getElementById('player-card-2-img').src = playerCard2.img;
     document.getElementById('player-score').textContent = playerCard1.value + playerCard2.value;
 }
 
@@ -144,14 +144,14 @@ function displayHouseCards(operand1, operand2) {
     let houseCard1 = cards[operand1 - 1];
     let houseCard2 = cards[operand2 - 1];
     let houseScore = houseCard1.value + houseCard2.value;
-    document.getElementById('house-card-1').textContent = houseCard1.rank;
-    document.getElementById('house-card-2').textContent = houseCard2.rank;
+    document.getElementById('house-card-1-img').src = houseCard1.img;
+    document.getElementById('house-card-2-img').src = houseCard2.img;
     document.getElementById('house-score').textContent = houseScore;
     hitHouseCard(houseScore);
 }
 
 /**
- * checks whether the house needs a third card, if it's total initla score is less than 11
+ * checks whether the house needs a third card, if it's total initial score is less than 11
  */
 
 function hitHouseCard(houseScore) {
@@ -159,7 +159,7 @@ function hitHouseCard(houseScore) {
     else {
         let num6 = Math.floor(Math.random() * 52) + 1;
         let houseCard3 = cards[num6 - 1];
-        document.getElementById('house-card-3').textContent = houseCard3.rank;
+        document.getElementById('house-card-3-img').src = houseCard3.img;
         let newHouseScore = houseScore + houseCard3.value;
         document.getElementById('house-score').textContent = newHouseScore;
         checkGameResult();
@@ -172,19 +172,19 @@ function hitHouseCard(houseScore) {
  */
 
 function hitCard() {
-    let playercard3 = cards[Math.floor(Math.random() * 52)];
-    document.getElementById('player-card-3').textContent = playercard3.rank;
+    let playerCard3 = cards[Math.floor(Math.random() * 52)];
+    document.getElementById('player-card-3-img').src = playerCard3.img;
     hitButton.style.visibility = "hidden";
     standButton.style.visibility = "hidden";
-    calculatePlayerTotal(playercard3);
+    calculatePlayerTotal(playerCard3);
 }
 
 /**
  * new player total is calculated including hit card
  */
 
-function calculatePlayerTotal(playercard3) {
-    let finalPlayerScore = parseInt(document.getElementById('player-score').textContent) + playercard3.value;
+function calculatePlayerTotal(playerCard3) {
+    let finalPlayerScore = parseInt(document.getElementById('player-score').textContent) + playerCard3.value;
     console.log(finalPlayerScore);
     document.getElementById('player-score').textContent = finalPlayerScore;
     checkPlayerTotal(finalPlayerScore);
@@ -260,13 +260,13 @@ function checkTotal(newScore) {
 function resetGame() {
     dealButton.style.visibility = "visible";
     resetButton.style.visibility = "hidden";
-    document.getElementById('house-card-1').textContent = "";
-    document.getElementById('house-card-2').textContent = "";
-    document.getElementById('house-card-3').textContent = "";
+    document.getElementById('player-card-1-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('player-card-2-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('player-card-3-img').src = "/assets/images/back_of_card.png";
     document.getElementById('house-score').textContent = 0;
-    document.getElementById('player-card-1').textContent = "";
-    document.getElementById('player-card-2').textContent = "";
-    document.getElementById('player-card-3').textContent = "";
+    document.getElementById('house-card-1-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('house-card-2-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('house-card-3-img').src = "/assets/images/back_of_card.png";
     document.getElementById('player-score').textContent = 0;
     document.getElementById('result-box').textContent = "";
     document.getElementById('score-box').style.visibility = "visible";
