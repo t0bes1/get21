@@ -3,14 +3,15 @@
  * declarations & event listeners
  */
 
-let scoreBox = document.getElementById("score-box");
+let scoreBox = document.getElementById("chip-box");
 let houseScoreBox = document.getElementById('house-score');
 let resultBox = document.getElementById('result-box');
 let playerScoreBox = document.getElementById('player-score');
+let playerBet = document.getElementById('bet-box');
 
 let dealButton = document.getElementById('deal-button');
 dealButton.addEventListener("click", function () {
-    playerCards();
+    checkBetSize();
 });
 
 let standButton = document.getElementById('stand-button');
@@ -50,7 +51,7 @@ const cards = [
     { 'rank': 'Nine of hearts', 'value': 9, 'img': '/assets/images/9_of_hearts.png', },
     { 'rank': 'Ten of hearts', 'value': 10, 'img': '/assets/images/10_of_hearts.png', },
     { 'rank': 'Jack of hearts', 'value': 10, 'img': '/assets/images/jack_of_hearts2.png', },
-    { 'rank': 'Queen of hearts', 'value': 10, 'img': '/assets/images/queeen_of_hearts2.png', },
+    { 'rank': 'Queen of hearts', 'value': 10, 'img': '/assets/images/queen_of_hearts2.png', },
     { 'rank': 'King of hearts', 'value': 10, 'img': '/assets/images/king_of_hearts2.png', },
     { 'rank': 'Ace of clubs', 'value': 11, 'img': '/assets/images/ace_of_clubs.png', },
     { 'rank': 'Two of clubs', 'value': 2, 'img': '/assets/images/2_of_clubs.png', },
@@ -110,10 +111,23 @@ dialog.addEventListener("click", e => {
 });
 
 /**
+ * check bet size is allowable
+ */
+
+function checkBetSize() {
+    if (parseInt(playerBet.value) > parseInt(scoreBox.innerText)) {
+        alert("Too big!");
+    }
+    else (playerCards());
+}
+
+
+/**
  * game starts with player receiving two cards
  */
 
 function playerCards() {
+
     let num1 = Math.floor(Math.random() * 52);
     let num2 = Math.floor(Math.random() * 52);
 
@@ -234,14 +248,18 @@ function checkGameResult() {
 
 function growScore() {
     let oldScore = parseInt(scoreBox.innerText);
-    let newScore = oldScore + 6;
+    let newScore = oldScore + parseInt(playerBet.value);
     scoreBox.innerText = newScore;
     checkTotal(newScore);
+    console.log(newScore);
 }
 
 function reduceScore() {
     let oldScore = parseInt(scoreBox.innerText);
-    scoreBox.innerText = oldScore - 1;
+    let newScore = oldScore - parseInt(playerBet.value);
+    scoreBox.innerText = newScore;
+    checkTotal(newScore);
+    console.log(newScore);
 }
 
 /**
@@ -249,13 +267,14 @@ function reduceScore() {
  */
 
 function checkTotal(newScore) {
-    if (newScore > 9) {
+    console.log("check");
+    if (newScore = 0) { console.log("end"); }
+    if (newScore > 19) {
         resultBox.textContent = "You've done it, 10 points!";
         resetButton.style.visibility = "visible";
         scoreBox.style.visibility = "hidden";
         scoreBox.textContent = 0;
     }
-    else (console.log("live"));
 }
 
 /**
@@ -274,5 +293,6 @@ function resetGame() {
     document.getElementById('house-card-3-img').src = "/assets/images/back_of_card.png";
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
+    playerBet.value = "";
     scoreBox.style.visibility = "visible";
 }
