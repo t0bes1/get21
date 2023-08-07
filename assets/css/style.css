@@ -30,6 +30,7 @@ li {
 p {
     padding: 1%;
     font-size: 150%;
+    color: darkgray;
 }
 
 img {
@@ -173,6 +174,7 @@ dialog::backdrop {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: blueviolet;
 }
 
 #deal-button-area {
@@ -181,17 +183,16 @@ dialog::backdrop {
     justify-content: space-evenly;
     align-items: center;
     width: 80%;
-    background-color: blueviolet;
     padding: 1%;
+    background-color: blueviolet;
 }
 
-#bet-area {
+.chip-area {
     font-family: 'Inter';
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: darkgray;
     width: 15%;
 }
 
@@ -225,18 +226,28 @@ dialog::backdrop {
 }
 
 #hit-button {
-    visibility: visible;
+    visibility: hidden;
 }
 
 #stand-button {
-    visibility: visible;
+    visibility: hidden;
 }
 
-#reset-button {
-    visibility: visible;
+#newhand-button {
+    visibility: hidden;
+}
+
+#restart-button {
+    visibility: hidden;
 }
 
 /*score section*/
+
+#score-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 #score-area {
     font-family: 'Inter';
@@ -244,8 +255,9 @@ dialog::backdrop {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding: 1%;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
 }
 
 #result-box {
@@ -267,12 +279,7 @@ dialog::backdrop {
 }
 
 #chip-box {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    vertical-align: middle;
-    width: 15%;
+    width: 100%;
     font-size: 300%;
     color: darkgrey;
     text-align: center;
@@ -282,6 +289,16 @@ dialog::backdrop {
 }
 
 /*footer*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
 
 #footer-bar {
     display: flex;

@@ -24,9 +24,14 @@ hitButton.addEventListener("click", function () {
     hitCard();
 });
 
-let resetButton = document.getElementById('reset-button');
-resetButton.addEventListener("click", function () {
+let newButton = document.getElementById('newhand-button');
+newButton.addEventListener("click", function () {
     resetGame();
+});
+
+let restartButton = document.getElementById('restart-button');
+restartButton.addEventListener("click", function () {
+    restartGame();
 });
 
 const dialog = document.querySelector("dialog");
@@ -115,8 +120,13 @@ dialog.addEventListener("click", e => {
  */
 
 function checkBetSize() {
-    if (parseInt(playerBet.value) > parseInt(scoreBox.innerText)) {
-        alert("Too big!");
+    if (isNaN(parseInt(playerBet.value))) {
+        resultBox.textContent = "You can't bet nothing!";
+        dealButton.style.visibility = "hidden";
+        newButton.style.visibility = "visible";
+    }
+    else if (parseInt(playerBet.value) > parseInt(scoreBox.innerText)) {
+        resultBox.textContent = "Bet size is more than the chips you have!";
     }
     else (playerCards());
 }
@@ -204,7 +214,6 @@ function hitCard() {
 
 function calculatePlayerTotal(playerCard3) {
     let finalPlayerScore = parseInt(playerScoreBox.textContent) + playerCard3.value;
-    console.log(finalPlayerScore);
     playerScoreBox.textContent = finalPlayerScore;
     checkPlayerTotal(finalPlayerScore);
 }
@@ -216,7 +225,6 @@ function calculatePlayerTotal(playerCard3) {
 function checkPlayerTotal(finalPlayerScore) {
     if (finalPlayerScore > 21) {
         resultBox.textContent = `You're Bust! ${finalPlayerScore} is over 21 ... You Lose!`;
-        resetButton.style.visibility = "visible";
         reduceScore();
     } else {
         houseCards();
@@ -232,12 +240,10 @@ function checkGameResult() {
     let houseResult = parseInt(houseScoreBox.innerText);
     if (playerResult > houseResult) {
         resultBox.textContent = `Win :) ... ${playerResult} beats ${houseResult}`;
-        resetButton.style.visibility = "visible";
         growScore();
     }
     else {
         resultBox.textContent = `Lose :( ... ${houseResult} beats ${playerResult}`;
-        resetButton.style.visibility = "visible";
         reduceScore();
     }
 }
@@ -251,7 +257,6 @@ function growScore() {
     let newScore = oldScore + parseInt(playerBet.value);
     scoreBox.innerText = newScore;
     checkTotal(newScore);
-    console.log(newScore);
 }
 
 function reduceScore() {
@@ -259,7 +264,6 @@ function reduceScore() {
     let newScore = oldScore - parseInt(playerBet.value);
     scoreBox.innerText = newScore;
     checkTotal(newScore);
-    console.log(newScore);
 }
 
 /**
@@ -267,23 +271,25 @@ function reduceScore() {
  */
 
 function checkTotal(newScore) {
-    console.log("check");
-    if (newScore = 0) { console.log("end"); }
-    if (newScore > 19) {
-        resultBox.textContent = "You've done it, 10 points!";
-        resetButton.style.visibility = "visible";
-        scoreBox.style.visibility = "hidden";
-        scoreBox.textContent = 0;
+    if (newScore > 199) {
+        resultBox.textContent = "You've done it, doubled Bankroll!";
+        restartButton.style.visibility = "visible";
     }
+    else if (newScore === 0) {
+        resultBox.textContent = "You're Bust! Try Again?";
+        restartButton.style.visibility = "visible";
+    }
+
+    else { newButton.style.visibility = "visible"; }
 }
 
 /**
- * return game to initial state for user to play again
+ * return game to next hand for a user to bet again
  */
 
 function resetGame() {
     dealButton.style.visibility = "visible";
-    resetButton.style.visibility = "hidden";
+    newButton.style.visibility = "hidden";
     document.getElementById('player-card-1-img').src = "/assets/images/back_of_card.png";
     document.getElementById('player-card-2-img').src = "/assets/images/back_of_card.png";
     document.getElementById('player-card-3-img').src = "/assets/images/back_of_card.png";
@@ -295,4 +301,26 @@ function resetGame() {
     resultBox.textContent = "";
     playerBet.value = "";
     scoreBox.style.visibility = "visible";
+}
+
+/**
+ * return game to initial state for user to play again
+ */
+
+function restartGame() {
+    dealButton.style.visibility = "visible";
+    newButton.style.visibility = "hidden";
+    restartButton.style.visibility = "hidden";
+    document.getElementById('player-card-1-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('player-card-2-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('player-card-3-img').src = "/assets/images/back_of_card.png";
+    houseScoreBox.textContent = 0;
+    document.getElementById('house-card-1-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('house-card-2-img').src = "/assets/images/back_of_card.png";
+    document.getElementById('house-card-3-img').src = "/assets/images/back_of_card.png";
+    playerScoreBox.textContent = 0;
+    resultBox.textContent = "";
+    playerBet.value = "";
+    scoreBox.style.visibility = "visible";
+    scoreBox.innerText = 100;
 }

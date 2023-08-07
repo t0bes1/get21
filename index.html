@@ -59,21 +59,24 @@
     </section>
     <section id="deal-button-section">
       <div id="deal-button-area">
-        <div id="bet-area">
+        <div class="chip-area">
           <p class="bet-message">Enter Bet:</p>
-          <input id="bet-box" type="number">
+          <input id="bet-box" type="number" min="10" max="100" step="5">
         </div>
         <button class="game-button" id="deal-button" data-type="submit">Deal</button>
         <button class="game-button" id="hit-button" data-type="submit">HIT</button>
         <button class="game-button" id="stand-button" data-type="submit">STAND</button>
-        <button class="game-button" id="reset-button" data-type="submit">New HAND</button>
+        <button class="game-button" id="newhand-button" data-type="submit">New HAND</button>
       </div>
     </section>
-    <section>
+    <section id="score-section">
       <div id="score-area">
-        <div id="result-box"></div>
-        <div id="chip-box">10
+        <div class="chip-area">
+          <p>Bankroll:</p>
+          <div id="chip-box">100</div>
         </div>
+        <div id="result-box"></div>
+        <button class="game-button" id="restart-button" data-type="submit">New START</button>
       </div>
     </section>
   </main>
