@@ -3,6 +3,11 @@
  * declarations & event listeners
  */
 
+let scoreBox = document.getElementById("score-box");
+let houseScoreBox = document.getElementById('house-score');
+let resultBox = document.getElementById('result-box');
+let playerScoreBox = document.getElementById('player-score');
+
 let dealButton = document.getElementById('deal-button');
 dealButton.addEventListener("click", function () {
     playerCards();
@@ -109,8 +114,8 @@ dialog.addEventListener("click", e => {
  */
 
 function playerCards() {
-    let num1 = Math.floor(Math.random() * 52) + 1;
-    let num2 = Math.floor(Math.random() * 52) + 1;
+    let num1 = Math.floor(Math.random() * 52);
+    let num2 = Math.floor(Math.random() * 52);
 
     displayPlayerCards(num1, num2);
     dealButton.style.visibility = "hidden";
@@ -119,11 +124,11 @@ function playerCards() {
 }
 
 function displayPlayerCards(operand1, operand2) {
-    let playerCard1 = cards[operand1 - 1];
-    let playerCard2 = cards[operand2 - 1];
+    let playerCard1 = cards[operand1];
+    let playerCard2 = cards[operand2];
     document.getElementById('player-card-1-img').src = playerCard1.img;
     document.getElementById('player-card-2-img').src = playerCard2.img;
-    document.getElementById('player-score').textContent = playerCard1.value + playerCard2.value;
+    playerScoreBox.textContent = playerCard1.value + playerCard2.value;
 }
 
 /**
@@ -131,8 +136,8 @@ function displayPlayerCards(operand1, operand2) {
  */
 
 function houseCards() {
-    let num4 = Math.floor(Math.random() * 52) + 1;
-    let num5 = Math.floor(Math.random() * 52) + 1;
+    let num4 = Math.floor(Math.random() * 52);
+    let num5 = Math.floor(Math.random() * 52);
 
     displayHouseCards(num4, num5);
 
@@ -141,12 +146,12 @@ function houseCards() {
 }
 
 function displayHouseCards(operand1, operand2) {
-    let houseCard1 = cards[operand1 - 1];
-    let houseCard2 = cards[operand2 - 1];
+    let houseCard1 = cards[operand1];
+    let houseCard2 = cards[operand2];
     let houseScore = houseCard1.value + houseCard2.value;
     document.getElementById('house-card-1-img').src = houseCard1.img;
     document.getElementById('house-card-2-img').src = houseCard2.img;
-    document.getElementById('house-score').textContent = houseScore;
+    houseScoreBox.textContent = houseScore;
     hitHouseCard(houseScore);
 }
 
@@ -157,11 +162,11 @@ function displayHouseCards(operand1, operand2) {
 function hitHouseCard(houseScore) {
     if (houseScore > 11) { checkGameResult(); }
     else {
-        let num6 = Math.floor(Math.random() * 52) + 1;
-        let houseCard3 = cards[num6 - 1];
+        let num6 = Math.floor(Math.random() * 52);
+        let houseCard3 = cards[num6];
         document.getElementById('house-card-3-img').src = houseCard3.img;
         let newHouseScore = houseScore + houseCard3.value;
-        document.getElementById('house-score').textContent = newHouseScore;
+        houseScoreBox.textContent = newHouseScore;
         checkGameResult();
     }
 
@@ -184,9 +189,9 @@ function hitCard() {
  */
 
 function calculatePlayerTotal(playerCard3) {
-    let finalPlayerScore = parseInt(document.getElementById('player-score').textContent) + playerCard3.value;
+    let finalPlayerScore = parseInt(playerScoreBox.textContent) + playerCard3.value;
     console.log(finalPlayerScore);
-    document.getElementById('player-score').textContent = finalPlayerScore;
+    playerScoreBox.textContent = finalPlayerScore;
     checkPlayerTotal(finalPlayerScore);
 }
 
@@ -196,7 +201,7 @@ function calculatePlayerTotal(playerCard3) {
 
 function checkPlayerTotal(finalPlayerScore) {
     if (finalPlayerScore > 21) {
-        document.getElementById('result-box').textContent = `You're Bust! ${finalPlayerScore} is over 21 ... You Lose!`;
+        resultBox.textContent = `You're Bust! ${finalPlayerScore} is over 21 ... You Lose!`;
         resetButton.style.visibility = "visible";
         reduceScore();
     } else {
@@ -209,15 +214,15 @@ function checkPlayerTotal(finalPlayerScore) {
  */
 
 function checkGameResult() {
-    let playerResult = parseInt(document.getElementById('player-score').innerText);
-    let houseResult = parseInt(document.getElementById('house-score').innerText);
+    let playerResult = parseInt(playerScoreBox.innerText);
+    let houseResult = parseInt(houseScoreBox.innerText);
     if (playerResult > houseResult) {
-        document.getElementById('result-box').textContent = `Win :) ... ${playerResult} beats ${houseResult}`;
+        resultBox.textContent = `Win :) ... ${playerResult} beats ${houseResult}`;
         resetButton.style.visibility = "visible";
         growScore();
     }
     else {
-        document.getElementById('result-box').textContent = `Lose :( ... ${houseResult} beats ${playerResult}`;
+        resultBox.textContent = `Lose :( ... ${houseResult} beats ${playerResult}`;
         resetButton.style.visibility = "visible";
         reduceScore();
     }
@@ -228,15 +233,15 @@ function checkGameResult() {
  */
 
 function growScore() {
-    let oldScore = parseInt(document.getElementById("score-box").innerText);
-    let newScore = oldScore + 3;
-    document.getElementById("score-box").innerText = newScore;
+    let oldScore = parseInt(scoreBox.innerText);
+    let newScore = oldScore + 6;
+    scoreBox.innerText = newScore;
     checkTotal(newScore);
 }
 
 function reduceScore() {
-    let oldScore = parseInt(document.getElementById("score-box").innerText);
-    document.getElementById("score-box").innerText = oldScore - 1;
+    let oldScore = parseInt(scoreBox.innerText);
+    scoreBox.innerText = oldScore - 1;
 }
 
 /**
@@ -245,10 +250,10 @@ function reduceScore() {
 
 function checkTotal(newScore) {
     if (newScore > 9) {
-        document.getElementById('result-box').textContent = "You've done it, 10 points!";
+        resultBox.textContent = "You've done it, 10 points!";
         resetButton.style.visibility = "visible";
-        document.getElementById('score-box').style.visibility = "hidden";
-        document.getElementById('score-box').textContent = 0;
+        scoreBox.style.visibility = "hidden";
+        scoreBox.textContent = 0;
     }
     else (console.log("live"));
 }
@@ -263,11 +268,11 @@ function resetGame() {
     document.getElementById('player-card-1-img').src = "/assets/images/back_of_card.png";
     document.getElementById('player-card-2-img').src = "/assets/images/back_of_card.png";
     document.getElementById('player-card-3-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('house-score').textContent = 0;
+    houseScoreBox.textContent = 0;
     document.getElementById('house-card-1-img').src = "/assets/images/back_of_card.png";
     document.getElementById('house-card-2-img').src = "/assets/images/back_of_card.png";
     document.getElementById('house-card-3-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('player-score').textContent = 0;
-    document.getElementById('result-box').textContent = "";
-    document.getElementById('score-box').style.visibility = "visible";
+    playerScoreBox.textContent = 0;
+    resultBox.textContent = "";
+    scoreBox.style.visibility = "visible";
 }
