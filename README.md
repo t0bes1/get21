@@ -15,9 +15,15 @@ As a user I want to be able to see the cards I'm dealt and get shown the total I
 
 As a user I want to be able to see whether I have won or lost the hand (and why) so that I can make goods decisions in future rounds of the game
 
+As a user I want to be able to bet different amounts on different hands to try  my luck and "go big" if I wish, so that the game is engaging and fun to play
+
 As a user I want to see the score as I am playing so that I can understand how well I am doing in the game
 
-As a user I want to understand that 10 is a winning score so that I can aim to reach this goal and receive some congratulations if I achieve it
+As a user I want to understand that a 200+ bankroll is a winning score so that I can aim to reach this goal and receive some congratulations if I achieve it
+
+As a user I want to understand that a 0 is a losing score so that I can aim to avoid reaching this score and receive some commiserations if I ultimately achieve it
+
+As a user I want to hear celebration or commiseration sounds depending on if I win or lose the game, so that I can enjoy the experience and further understand what the outcome has been achieved
 
 
 ## Features
@@ -29,8 +35,7 @@ As a user I want to understand that 10 is a winning score so that I can aim to r
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
-- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items simmetrically on the pages.
-- [CSS roots](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) was used to declaring global CSS variables and apply them throughout the project. 
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items symmetrically on the pages.
 - [Balsamiq](https://balsamiq.com/) was used to make wireframes for the website.
 - [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
 - [Git](https://git-scm.com/) was used for the version control of the website.
@@ -41,8 +46,8 @@ As a user I want to understand that 10 is a winning score so that I can aim to r
 
 ### Wireframes 
 
-The basic structure of the website was created using Balsamiq and are shown here:
-
+The basic structure of the website was created using Balsamiq and are shown here: 
+[wireframes](../get21/documentation/get21-wireframes.pdf)
 ---
 
 ## Testing
@@ -59,46 +64,45 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
     - Mobile Screens: 
 
-+ The functionality of the links in the website was checked as well by different users.
++ The functionality of the game in the website was checked as well by different users.
 
 ### Manual testing
 
 | feature | action | expected result | tested | passed | comments |
 | --- | --- | --- | --- | --- | --- |
-| Navbar | | | | | |
-| Home | Click on the "Home" link | The user is redirected to the main page | Yes | Yes | - |
-| Top Boots | Click on the "Top Boots" link | The user is redirected to the top boots page | Yes | Yes | - |
-| Sign Up | Click on the "Sign Up" link | The user is redirected to the sign up page | Yes | Yes | - |
+| Game Play | | | | | |
+| Initial Game State | Refresh page and review set up | All cards are shown face down, a bankroll of 100 & scores at 0 | Yes | Yes | - |
+| Stake not set | No entry is made in the stake box, but "Deal" button pressed  | A message appears showing the user that they can't bet nothing and a new deal is offered | Yes | Yes | - |
+| Stake greater than Bankroll | Player chooses a stake higher than the Bankroll available  | A message appears showing the user that they can't bet this amount and a new deal is offered | Yes | Yes | - |
+| Initial Deal | Enter a valid stake and click on the "Deal" button | The player receives 2 cards, the correct total is shown on the player score and the Hit/Stand choice is offered | Yes | Yes | - |
+| Player chooses "Hit" |The "Hit" button is clicked |The player receives a third card, the correct total is calcuated and the house is dealt its cards |Yes |Yes | |
+| Player chooses "Stand" and Busts |The "Stand" button is clicked |The player does not receive a third card, the result of the game is calculated as a loss, with the house cards not shown |Yes |Yes | |
+| Player chooses "Stand" and scores 21 or lower |The "Stand" button is clicked |The player does not receive a third card, the house hand is dealt correctly, the game result is calculated correctly |Yes |Yes | |
+| Hand result is calculated correctly |The hand is concluded after "Hit" or "Stand" |The player score is shown correctly, the house score is show correctly, a win or lose message is displayed correctly |Yes |Yes | |
+| Hand outcome of a win is shown correctly |A hand is concluded |The Bankroll is updated to reflect the win, in line with the bet amount |Yes |Yes | |
+| Hand outcome of a loss is shown correctly |A hand is concluded |The Bankroll is updated to reflect the loss, in line with the bet amount |Yes |Yes | |
+| Game outcome of a win is shown correctly |The player reaches a bankroll of 200 or greater after as many hands as necessary |A congratulations message is shown, a celebration sound is played, the user is offered a restart option |Yes |Yes | |
+| Game outcome of a loss is shown correctly |The player reaches a bankroll of 0 after as many hands as necessary |A commiseration message is shown, a commiseration sound is played, the user is offered a restart option |Yes |Yes | |
+| Modal | | | | | |
+| Game rules are shown  |The "i" button is clicked | The rules of the game are shown to the player |Yes |Yes | |
+| Game rules are hidden |The screen is clicked when the modal is open | The rules of the game are no longer shown to the player and the game is playable |Yes |Yes | |
 | Footer | | | | | |
-| Instagram icon in the footer | Click on the Instagram icon | The user is redirected to the Instagram page | Yes | Yes | - |
-| Facebook icon in the footer | Click on the Facebook icon | The user is redirected to the Facebook page | Yes | Yes | - |
-| Twitter icon in the footer | Click on the Twitter icon | The user is redirected to the Twitter page | Yes | Yes | - |
-| YouTube icon in the footer | Click on the YouTube icon | The user is redirected to the YouTube page | Yes | Yes | - |
-| Home page | | | | | |
-| "Sign Up" button in Sign Up section | Click on the "Sign Up" button | The user is redirected to the sign upp page | Yes | Yes | - |
-| Top Boots page | | | | | |
-| "Sign Up" button in Sign Up section | Click on the "Sign Up" button | The user is redirected to the sign up page | Yes | Yes | - |
-| Sign Up page | | | | | |
-| Full Name input | Enter the full name | The full name is entered | Yes | Yes | If user doesn't enter the full name, the error message appears |
-| Email input | Enter the email | The email is entered | Yes | Yes | If user doesn't enter the email, the error message appears. If user enters not valid email, the error message appears |
-| Age input | Enter the age | The age is entered | Yes | Yes | If user doesn't enter age, the error message appears |
-| "Submit" button | Click on the "Submit" button | The user is redirected to the response page | Yes | Yes | - |
-| Response page | | | | | |
-| Response message | The user will be automatically redirected to the home page after 5 seconds | The user is redirected to the home page | Yes | Yes | - |
+| Github icon in the footer | Click on the Github icon | The user is redirected to the Github page | Yes | Yes | - |
+
 
 ---
 ​
 ### Bugs
 + ##### Solved bugs
-    1. TBC
+    1. Hand was plaed despite the user selecting a stake greater than the player's bankroll or even at a 0 level
     
-        *Solutions:* TBC
+        *Solutions:* a game function was added to test the stake amount vs the bankroll and ensure it w3as greater than 0
     ---
 + ##### Unsolved bugs
     - None.
 
 + ##### Mistakes
-    - TBC
+    - The game was initially created without the bet feature. This made the user experience lack engagement.
 
 ---
 ## Validator testing
@@ -148,7 +152,7 @@ In your IDE Terminal, type the following command to clone my repository:
 ## Acknowledgments
 
 - [Code Institute](https://codeinstitute.net/) tutors and Slack community members for their support and help.
-- [Public Domain Card Images](https://opengameart.org/content/playing-cards-vector-png) thanks to Open Game Art for making the playing card image design mkuch easier!
-- [Uppbeat](https://uppbeat.io/sfx) the win & lose game sound effects were acquired free from Uppbeat
+- [Public Domain Card Images](https://opengameart.org/content/playing-cards-vector-png) were acquired from Open Game Art; thanks for making the design process much easier!
+- [Uppbeat](https://uppbeat.io/sfx) provided the win & lose game sound effects
 
 ---
