@@ -127,24 +127,24 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 ## Validator testing
 + ### HTML
   #### Home Page
-    - No errors or warnings were found when passing through the official W3C validator.
+  - No errors or warnings were found when passing through the official W3C validator.
 
 ![W3C Checker](../get21/documentation/w3c-checker-get21.png)
     
 + ### CSS
-  No errors were found when passing through the official W3C (Jigsaw) validator:
+  - No errors were found when passing through the official W3C (Jigsaw) validator:
 
 ![W3C CSS Checker](../get21/documentation/w3c-checker-css-get21.png)
 
 + ### Lighthouse Report: Accessibility and performance 
-    - Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
+  - Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
 
-    Main Game Page:
+![Lighthouse](../get21/documentation/lighthouse-get21.png)
 ---
 ## Deployment
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the [GitHub repository](), navigate to the Settings tab 
+  - In the [GitHub repository](https://github.com/t0bes1/get21), navigate to the Settings tab 
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
@@ -153,21 +153,21 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 In order to make a local copy of this project, you can clone it.
 In your IDE Terminal, type the following command to clone my repository:
 
-- `git clone 
+- `git clone https://github.com/t0bes1/get21.git`
 
 ---
 ## Credits
 
 + #### Content
 
-  - All images have been taken personally, they are listed as follows:
-
+  - All content has been created personally, aside from the card images
+  - [Public Domain Card Images](https://opengameart.org/content/playing-cards-vector-png) were acquired from Open Game Art; thanks to them for making the design process much easier!
+  - [Uppbeat](https://uppbeat.io/sfx) provided the win & lose game sound effects
 ---
 
 ## Acknowledgments
 
 - [Code Institute](https://codeinstitute.net/) tutors and Slack community members for their support and help.
-- [Public Domain Card Images](https://opengameart.org/content/playing-cards-vector-png) were acquired from Open Game Art; thanks for making the design process much easier!
-- [Uppbeat](https://uppbeat.io/sfx) provided the win & lose game sound effects
+
 
 ---
