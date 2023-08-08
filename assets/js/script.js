@@ -1,19 +1,20 @@
 
 /**
- * declarations & event listeners
+ * declarations
  */
 
-let scoreBox = document.getElementById("chip-box");
-let houseScoreBox = document.getElementById('house-score');
-let resultBox = document.getElementById('result-box');
-let playerScoreBox = document.getElementById('player-score');
-let playerBet = document.getElementById('bet-box');
-let playerBox1 = document.getElementById('player-card-1-img');
-let playerBox2 = document.getElementById('player-card-2-img');
-let playerBox3 = document.getElementById('player-card-3-img');
-let houseBox1 = document.getElementById('house-card-1-img');
-let houseBox2 = document.getElementById('house-card-2-img');
-let houseBox3 = document.getElementById('house-card-3-img');
+const scoreBox = document.getElementById("chip-box");
+const houseScoreBox = document.getElementById('house-score');
+const resultBox = document.getElementById('result-box');
+const playerScoreBox = document.getElementById('player-score');
+const playerBet = document.getElementById('bet-box');
+const playerBox1 = document.getElementById('player-card-1-img');
+const playerBox2 = document.getElementById('player-card-2-img');
+const playerBox3 = document.getElementById('player-card-3-img');
+const houseBox1 = document.getElementById('house-card-1-img');
+const houseBox2 = document.getElementById('house-card-2-img');
+const houseBox3 = document.getElementById('house-card-3-img');
+const newCard = "assets/images/back_of_card.png";
 
 let dealButton = document.getElementById('deal-button');
 dealButton.addEventListener("click", function () {
@@ -32,7 +33,7 @@ hitButton.addEventListener("click", function () {
 
 let newButton = document.getElementById('newhand-button');
 newButton.addEventListener("click", function () {
-    resetGame();
+    newHand();
 });
 
 let restartButton = document.getElementById('restart-button');
@@ -49,7 +50,6 @@ infoButton.addEventListener("click", function () {
 /**
  * cards variable with all 52 possible cards, each with a value for the game
  */
-
 const cards = [
     { 'rank': 'Ace of hearts', 'value': 11, 'img': 'assets/images/ace_of_hearts.png', },
     { 'rank': 'Two of hearts', 'value': 2, 'img': 'assets/images/2_of_hearts.png', },
@@ -106,9 +106,8 @@ const cards = [
 ];
 
 /**
- * modal
+ * modal click triggers rules, with close on click outside its box
  */
-
 dialog.addEventListener("click", e => {
     const dialogDimensions = dialog.getBoundingClientRect();
     if (
@@ -122,25 +121,26 @@ dialog.addEventListener("click", e => {
 });
 
 /**
- * check bet size is allowable
+ * check bet size is allowable (it cannot be NaN, 0, or > bankroll)
  */
-
 function checkBetSize() {
     if (isNaN(parseInt(playerBet.value))) {
         resultBox.textContent = "You can't bet nothing!";
-        dealButton.style.visibility = "hidden";
-        newButton.style.visibility = "visible";
-    }
-    else if (parseInt(playerBet.value) > parseInt(scoreBox.innerText)) {
+        dealButton.style.visibility = "visible";
+        playerBet.focus();
+    } else if (parseInt(playerBet.value) === 0) {
+        resultBox.textContent = "You can't bet nothing!";
+        dealButton.style.visibility = "visible";
+        playerBet.focus();
+    } else if (parseInt(playerBet.value) > parseInt(scoreBox.innerText)) {
         resultBox.textContent = "Bet size is more than the chips you have!";
-    }
-    else (playerCards());
+        playerBet.focus();
+    } else (playerCards());
 }
 
 /**
  * game starts with player receiving two cards
  */
-
 function playerCards() {
 
     let num1 = Math.floor(Math.random() * 52);
@@ -163,7 +163,6 @@ function displayPlayerCards(operand1, operand2) {
 /**
  * house cards phase; house receives two cards
  */
-
 function houseCards() {
     let num4 = Math.floor(Math.random() * 52);
     let num5 = Math.floor(Math.random() * 52);
@@ -187,7 +186,6 @@ function displayHouseCards(operand1, operand2) {
 /**
  * checks whether the house needs a third card, if it's total initial score is less than 11
  */
-
 function hitHouseCard(houseScore) {
     if (houseScore > 11) { checkGameResult(); }
     else {
@@ -203,7 +201,6 @@ function hitHouseCard(houseScore) {
 /**
  * player gets an extra card if choosing hit
  */
-
 function hitCard() {
     let playerCard3 = cards[Math.floor(Math.random() * 52)];
     playerBox3.src = playerCard3.img;
@@ -215,7 +212,6 @@ function hitCard() {
 /**
  * new player total is calculated including hit card
  */
-
 function calculatePlayerTotal(playerCard3) {
     let finalPlayerScore = parseInt(playerScoreBox.textContent) + playerCard3.value;
     playerScoreBox.textContent = finalPlayerScore;
@@ -225,7 +221,6 @@ function calculatePlayerTotal(playerCard3) {
 /**
  * player total is checked whether they are bust. If so, end game. If not, game continues.
  */
-
 function checkPlayerTotal(finalPlayerScore) {
     if (finalPlayerScore > 21) {
         resultBox.textContent = `You're Bust! ${finalPlayerScore} is over 21 ... You Lose!`;
@@ -238,7 +233,6 @@ function checkPlayerTotal(finalPlayerScore) {
 /**
  * player total is compared to house total and game result is evaluated.
  */
-
 function checkGameResult() {
     let playerResult = parseInt(playerScoreBox.innerText);
     let houseResult = parseInt(houseScoreBox.innerText);
@@ -255,7 +249,6 @@ function checkGameResult() {
 /**
  * increment scores up (grow) or down (reduce) depending on win or lose/bust
  */
-
 function growScore() {
     let oldScore = parseInt(scoreBox.innerText);
     let newScore = oldScore + parseInt(playerBet.value);
@@ -273,10 +266,10 @@ function reduceScore() {
 /**
  * checks whether player has reached 10 points and won the game
  */
-
 function checkTotal(newScore) {
     if (newScore > 199) {
         resultBox.textContent = "You've done it, doubled Bankroll!";
+        resultBox.style.backgroundColor = "darkgreen";
         restartButton.style.visibility = "visible";
         document.getElementById('win-sound').play();
     }
@@ -294,17 +287,16 @@ function checkTotal(newScore) {
 /**
  * return game to next hand for a user to bet again
  */
-
-function resetGame() {
+function newHand() {
     dealButton.style.visibility = "visible";
     newButton.style.visibility = "hidden";
-    playerBox1.src = "assets/images/back_of_card.png";
-    playerBox2.src = "assets/images/back_of_card.png";
-    playerBox3.src = "assets/images/back_of_card.png";
+    playerBox1.src = newCard;
+    playerBox2.src = newCard;
+    playerBox3.src = newCard;
     houseScoreBox.textContent = 0;
-    houseBox1.src = "assets/images/back_of_card.png";
-    houseBox2.src = "assets/images/back_of_card.png";
-    houseBox3.src = "assets/images/back_of_card.png";
+    houseBox1.src = newCard;
+    houseBox2.src = newCard;
+    houseBox3.src = newCard;
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
     scoreBox.style.visibility = "visible";
@@ -313,21 +305,9 @@ function resetGame() {
 /**
  * return game to initial state for user to play again
  */
-
 function restartGame() {
-    dealButton.style.visibility = "visible";
-    newButton.style.visibility = "hidden";
+    newHand();
     restartButton.style.visibility = "hidden";
-    playerBox1.src = "assets/images/back_of_card.png";
-    playerBox2.src = "assets/images/back_of_card.png";
-    playerBox3.src = "assets/images/back_of_card.png";
-    houseScoreBox.textContent = 0;
-    houseBox1.src = "assets/images/back_of_card.png";
-    houseBox2.src = "assets/images/back_of_card.png";
-    houseBox3.src = "assets/images/back_of_card.png";
-    playerScoreBox.textContent = 0;
-    resultBox.textContent = "";
     playerBet.value = "";
-    scoreBox.style.visibility = "visible";
     scoreBox.innerText = 100;
 }
