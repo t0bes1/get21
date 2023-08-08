@@ -404,6 +404,7 @@ main {
     .game-card {
         font-size: 80%;
         box-shadow: none;
+        background-color: white;
         width: 30%;
     }
 
@@ -417,10 +418,12 @@ main {
 
     #chip-box {
         font-size: 200%;
+        border-width: 2px;
     }
 
     #bet-box {
-        font-size: 200%
+        font-size: 200%;
+        border-width: 2px;
     }
 
     #house-score {
