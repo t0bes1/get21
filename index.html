@@ -22,15 +22,15 @@
       <div id="house-container">
         <div class="game-area">
           <div class="game-card" id="house-card-1">
-            <div class="image-container"><img id="house-card-1-img" src="/assets/images/back_of_card.png"
+            <div class="image-container"><img id="house-card-1-img" src="../assets/images/back_of_card.png"
                 alt="player card 1"></div>
           </div>
           <div class="game-card" id="house-card-2">
-            <div class="image-container"><img id="house-card-2-img" src="/assets/images/back_of_card.png"
+            <div class="image-container"><img id="house-card-2-img" src="../assets/images/back_of_card.png"
                 alt="player card 2"></div>
           </div>
           <div class="game-card" id="house-card-3">
-            <div class="image-container"><img id="house-card-3-img" src="/assets/images/back_of_card.png"
+            <div class="image-container"><img id="house-card-3-img" src="../assets/images/back_of_card.png"
                 alt="player card 3"></div>
           </div>
           <div class="game-score-area">
@@ -45,15 +45,15 @@
       <div id="player-container">
         <div class="game-area">
           <div class="game-card" id="player-card-1">
-            <div class="image-container"><img id="player-card-1-img" src="/assets/images/back_of_card.png"
+            <div class="image-container"><img id="player-card-1-img" src="../assets/images/back_of_card.png"
                 alt="house card 1"></div>
           </div>
           <div class="game-card" id="player-card-2">
-            <div class="image-container"><img id="player-card-2-img" src="/assets/images/back_of_card.png"
+            <div class="image-container"><img id="player-card-2-img" src="../assets/images/back_of_card.png"
                 alt="house card 2"></div>
           </div>
           <div class="game-card" id="player-card-3">
-            <div class="image-container"><img id="player-card-3-img" src="/assets/images/back_of_card.png"
+            <div class="image-container"><img id="player-card-3-img" src="../assets/images/back_of_card.png"
                 alt="house card 3"></div>
           </div>
           <div class="game-score-area">
@@ -69,10 +69,11 @@
           <h3 class="bet-message">Enter Bet:</h3>
           <input id="bet-box" type="number" min="10" max="195" step="5">
         </div>
-        <button class="game-button" id="deal-button" data-type="submit">Deal</button>
-        <button class="game-button" id="hit-button" data-type="submit">HIT</button>
-        <button class="game-button" id="stand-button" data-type="submit">STAND</button>
-        <button class="game-button" id="newhand-button" data-type="submit">New HAND</button>
+        <button class="game-button" id="deal-button" data-type="submit" aria-label="deal button">Deal</button>
+        <button class="game-button" id="hit-button" data-type="submit" aria-label="hit button">HIT</button>
+        <button class="game-button" id="stand-button" data-type="submit" aria-label="stand button">STAND</button>
+        <button class="game-button" id="newhand-button" data-type="submit" aria-label="new hand button">New
+          HAND</button>
       </div>
     </section>
     <section id="score-section">
@@ -82,9 +83,10 @@
           <div id="chip-box">100</div>
         </div>
         <div id="result-box"></div>
-        <button class="game-button" id="restart-button" data-type="submit">START AGAIN</button>
-        <audio id="win-sound" src="/assets/audio/cha-ching-cash-register-jam-fx-1-00-04.mp3"></audio>
-        <audio id="lose-sound" src="/assets/audio/tuba-game-over-epic-stock-media-1-00-05.mp3"></audio>
+        <button class="game-button" id="restart-button" data-type="submit" aria-label="restart button">START
+          AGAIN</button>
+        <audio id="win-sound" src="../assets/audio/cha-ching-cash-register-jam-fx-1-00-04.mp3"></audio>
+        <audio id="lose-sound" src="../assets/audio/tuba-game-over-epic-stock-media-1-00-05.mp3"></audio>
       </div>
     </section>
   </main>
@@ -115,7 +117,7 @@
       </div>
     </div>
   </footer>
-  <script src="/assets/js/script.js"></script>
+  <script src="../assets/js/script.js"></script>
   <script src="https://kit.fontawesome.com/042d21b2dd.js" crossorigin="anonymous"></script>
 </body>
 

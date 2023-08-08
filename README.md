@@ -110,12 +110,12 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   #### Home Page
     - No errors or warnings were found when passing through the official W3C validator.
 
-
+![W3C Checker](../get21/documentation/w3c-checker-get21.png)
     
 + ### CSS
   No errors were found when passing through the official W3C (Jigsaw) validator:
 
-  X warnings were detected, though these all relate to the use of variables, which have no demostrable impact on the wesbite:
+![W3C CSS Checker](../get21/documentation/w3c-checker-css-get21.png)
 
 + ### Lighthouse Report: Accessibility and performance 
     - Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
