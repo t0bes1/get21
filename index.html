@@ -21,7 +21,7 @@
   </header>
   <main>
     <section id="house-section">
-      <h2>The House</h2>
+      <h2>The House <i class="fa-solid fa-dice"></i></h2>
       <div id="house-container">
         <div class="game-area">
           <div class="game-card" id="house-card-1">
@@ -47,7 +47,7 @@
       </div>
     </section>
     <section id="player-section">
-      <h2>The Player</h2>
+      <h2>The Player <i class="fa-solid fa-user-secret"></i></h2>
       <div id="player-container">
         <div class="game-area">
           <div class="game-card" id="player-card-1">
@@ -73,11 +73,11 @@
       </div>
     </section>
     <section id="deal-button-section">
+      <div class="chip-area">
+        <h3 class="bet-message">Enter Bet:</h3>
+        <input id="bet-box" type="number" min="10" max="195" step="5" aria-label="bet stake input box">
+      </div>
       <div id="deal-button-area">
-        <div class="chip-area">
-          <h3 class="bet-message">Enter Bet:</h3>
-          <input id="bet-box" type="number" min="10" max="195" step="5" aria-label="bet stake input box">
-        </div>
         <button class="game-button" id="deal-button" data-type="submit" aria-label="deal button">Deal</button>
         <button class="game-button" id="hit-button" data-type="submit" aria-label="hit button">HIT</button>
         <button class="game-button" id="stand-button" data-type="submit" aria-label="stand button">STAND</button>
@@ -86,22 +86,22 @@
       </div>
     </section>
     <section id="score-section">
+      <div class="chip-area">
+        <h3>Bankroll:</h3>
+        <div id="bank-box">100</div>
+      </div>
       <div id="score-area">
-        <div class="chip-area">
-          <h3>Bankroll:</h3>
-          <div id="chip-box">100</div>
-        </div>
         <div id="result-box"></div>
         <button class="game-button" id="restart-button" data-type="submit" aria-label="restart button">START
           AGAIN</button>
-        <audio id="win-sound" src="../assets/audio/cha-ching-cash-register-jam-fx-1-00-04.mp3"></audio>
-        <audio id="lose-sound" src="../assets/audio/tuba-game-over-epic-stock-media-1-00-05.mp3"></audio>
+        <audio id="win-sound" src="assets/audio/cha-ching-cash-register-jam-fx-1-00-04.mp3"></audio>
+        <audio id="lose-sound" src="assets/audio/tuba-game-over-epic-stock-media-1-00-05.mp3"></audio>
       </div>
     </section>
   </main>
   <aside>
     <dialog id="rules-modal">
-      <h2>Get 21 Rules</h2>
+      <h4>Get 21 : How the game works</h4>
       <ul>
         <li>The goal of Get21 is to get a hand closer to 21 than the house's hand without going over 21</li>
         <li>An Ace is worth 11, Face cards (jack, queen, king) are worth 10. All other cards are worth their face value
@@ -116,18 +116,19 @@
         </li>
       </ul>
       <p>Click "DEAL" to start!! Have fun!!</p>
+      <button type="submit" id="info-close-button" onclick="dialog.close()">Close</button>
     </dialog>
   </aside>
   <footer>
     <div id="footer-bar">
       <div id="footer-message">
-        <i class="fa-solid fa-copyright"></i><a href="https://github.com/t0bes1/get21"
-          aria-label="link to GitHub page">Made by Toby Bentall (2023) <i class="fa-brands fa-github"></i></a>
+        <i class="fa-solid fa-copyright"></i><a href="https://github.com/t0bes1/get21" aria-label="link to GitHub page">
+          Made by Toby Bentall (2023) <i class="fa-brands fa-github"></i></a>
       </div>
     </div>
   </footer>
-  <script src="assets/js/script.js"></script>
   <script src="https://kit.fontawesome.com/042d21b2dd.js" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

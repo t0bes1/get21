@@ -3,7 +3,7 @@
  * declarations
  */
 
-const scoreBox = document.getElementById("chip-box");
+const bankBox = document.getElementById("bank-box");
 const houseScoreBox = document.getElementById('house-score');
 const resultBox = document.getElementById('result-box');
 const playerScoreBox = document.getElementById('player-score');
@@ -16,39 +16,8 @@ const houseBox2 = document.getElementById('house-card-2-img');
 const houseBox3 = document.getElementById('house-card-3-img');
 const newCard = "assets/images/back_of_card.png";
 
-let dealButton = document.getElementById('deal-button');
-dealButton.addEventListener("click", function () {
-    checkBetSize();
-});
-
-let standButton = document.getElementById('stand-button');
-standButton.addEventListener("click", function () {
-    houseCards();
-});
-
-let hitButton = document.getElementById('hit-button');
-hitButton.addEventListener("click", function () {
-    hitCard();
-});
-
-let newButton = document.getElementById('newhand-button');
-newButton.addEventListener("click", function () {
-    newHand();
-});
-
-let restartButton = document.getElementById('restart-button');
-restartButton.addEventListener("click", function () {
-    restartGame();
-});
-
-const dialog = document.querySelector("dialog");
-let infoButton = document.getElementById('info-modal');
-infoButton.addEventListener("click", function () {
-    dialog.showModal();
-});
-
 /**
- * cards variable with all 52 possible cards, each with a value for the game
+ * deck of cards variable, with all 52 possible cards, each with a value for the game
  */
 const cards = [
     { 'rank': 'Ace of hearts', 'value': 11, 'img': 'assets/images/ace_of_hearts.png', },
@@ -106,8 +75,43 @@ const cards = [
 ];
 
 /**
+ * event listeners for game play buttons 
+ */
+let dealButton = document.getElementById('deal-button');
+dealButton.addEventListener("click", function () {
+    checkBetSize();
+});
+
+let standButton = document.getElementById('stand-button');
+standButton.addEventListener("click", function () {
+    houseCards();
+});
+
+let hitButton = document.getElementById('hit-button');
+hitButton.addEventListener("click", function () {
+    hitCard();
+});
+
+let newButton = document.getElementById('newhand-button');
+newButton.addEventListener("click", function () {
+    newHand();
+});
+
+let restartButton = document.getElementById('restart-button');
+restartButton.addEventListener("click", function () {
+    restartGame();
+});
+
+/**
  * modal click triggers rules, with close on click outside its box
  */
+const dialog = document.querySelector("dialog");
+let infoButton = document.getElementById('info-modal');
+infoButton.addEventListener("click", function () {
+    dialog.showModal();
+});
+
+
 dialog.addEventListener("click", e => {
     const dialogDimensions = dialog.getBoundingClientRect();
     if (
@@ -121,25 +125,25 @@ dialog.addEventListener("click", e => {
 });
 
 /**
- * check bet size is allowable (it cannot be NaN, 0, or > bankroll)
+ * check bet size is allowable (it cannot be NaN, 0, or > player bank balance)
  */
 function checkBetSize() {
     if (isNaN(parseInt(playerBet.value))) {
-        resultBox.textContent = "You can't bet nothing!";
+        resultBox.textContent = "You can't bet nothing! ... Please enter a bet";
         dealButton.style.visibility = "visible";
         playerBet.focus();
     } else if (parseInt(playerBet.value) === 0) {
-        resultBox.textContent = "You can't bet nothing!";
+        resultBox.textContent = "You can't bet nothing! ... Please enter a bet";
         dealButton.style.visibility = "visible";
         playerBet.focus();
-    } else if (parseInt(playerBet.value) > parseInt(scoreBox.innerText)) {
+    } else if (parseInt(playerBet.value) > parseInt(bankBox.innerText)) {
         resultBox.textContent = "Bet size is more than the chips you have!";
         playerBet.focus();
     } else (playerCards());
 }
 
 /**
- * game starts with player receiving two cards
+ * game starts with the player receiving two cards
  */
 function playerCards() {
 
@@ -161,7 +165,7 @@ function displayPlayerCards(operand1, operand2) {
 }
 
 /**
- * house cards phase; house receives two cards
+ * house cards phase if player stands or is below 21; house receives two cards
  */
 function houseCards() {
     let num4 = Math.floor(Math.random() * 52);
@@ -210,7 +214,7 @@ function hitCard() {
 }
 
 /**
- * new player total is calculated including hit card
+ * new player total score is calculated including hit card
  */
 function calculatePlayerTotal(playerCard3) {
     let finalPlayerScore = parseInt(playerScoreBox.textContent) + playerCard3.value;
@@ -250,35 +254,39 @@ function checkGameResult() {
  * increment scores up (grow) or down (reduce) depending on win or lose/bust
  */
 function growScore() {
-    let oldScore = parseInt(scoreBox.innerText);
+    let oldScore = parseInt(bankBox.innerText);
     let newScore = oldScore + parseInt(playerBet.value);
-    scoreBox.innerText = newScore;
+    bankBox.innerText = newScore;
     checkTotal(newScore);
 }
 
 function reduceScore() {
-    let oldScore = parseInt(scoreBox.innerText);
+    let oldScore = parseInt(bankBox.innerText);
     let newScore = oldScore - parseInt(playerBet.value);
-    scoreBox.innerText = newScore;
+    bankBox.innerText = newScore;
     checkTotal(newScore);
 }
 
 /**
- * checks whether player has reached 10 points and won the game
+ * checks whether player has reached a 200 or 0 points balance and has won the game
  */
 function checkTotal(newScore) {
     if (newScore > 199) {
         resultBox.textContent = "You've done it, doubled Bankroll!";
         resultBox.style.backgroundColor = "darkgreen";
+        resultBox.style.border = "none";
+        bankBox.style.borderColor = "darkgreen";
         restartButton.style.visibility = "visible";
         document.getElementById('win-sound').play();
     }
     else if (newScore === 0) {
         resultBox.textContent = "You're Bust! Try Again?";
+        resultBox.style.backgroundColor = "red";
+        resultBox.style.border = "none";
+        bankBox.style.borderColor = "red";
         restartButton.style.visibility = "visible";
         document.getElementById('lose-sound').play();
     }
-
     else {
         newButton.style.visibility = "visible";
     }
@@ -299,7 +307,7 @@ function newHand() {
     houseBox3.src = newCard;
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
-    scoreBox.style.visibility = "visible";
+    bankBox.style.visibility = "visible";
 }
 
 /**
@@ -308,6 +316,9 @@ function newHand() {
 function restartGame() {
     newHand();
     restartButton.style.visibility = "hidden";
+    resultBox.style.backgroundColor = "navy";
+    resultBox.style.border = "solid";
+    bankBox.style.borderColor = "gold";
     playerBet.value = "";
-    scoreBox.innerText = 100;
+    bankBox.innerText = 100;
 }
