@@ -110,11 +110,7 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   #### Home Page
     - No errors or warnings were found when passing through the official W3C validator.
 
-  #### Top Boots Page
-    - No errors or warnings were found when passing through the official W3C validator.
 
-  #### Sign Up Page
-    - No errors or warnings were found when passing through the official W3C validator.
     
 + ### CSS
   No errors were found when passing through the official W3C (Jigsaw) validator:
