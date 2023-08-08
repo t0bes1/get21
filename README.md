@@ -148,6 +148,7 @@ In your IDE Terminal, type the following command to clone my repository:
 ## Acknowledgments
 
 - [Code Institute](https://codeinstitute.net/) tutors and Slack community members for their support and help.
-- https://opengameart.org/content/playing-cards-vector-png
+- [Public Domain Card Images](https://opengameart.org/content/playing-cards-vector-png) thanks to Open Game Art for making the playing card image design mkuch easier!
+- [Uppbeat](https://uppbeat.io/sfx) the win & lose game sound effects were acquired free from Uppbeat
 
 ---

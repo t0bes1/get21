@@ -61,7 +61,7 @@
       <div id="deal-button-area">
         <div class="chip-area">
           <p class="bet-message">Enter Bet:</p>
-          <input id="bet-box" type="number" min="10" max="100" step="5">
+          <input id="bet-box" type="number" min="10" max="195" step="5">
         </div>
         <button class="game-button" id="deal-button" data-type="submit">Deal</button>
         <button class="game-button" id="hit-button" data-type="submit">HIT</button>
@@ -76,7 +76,9 @@
           <div id="chip-box">100</div>
         </div>
         <div id="result-box"></div>
-        <button class="game-button" id="restart-button" data-type="submit">New START</button>
+        <button class="game-button" id="restart-button" data-type="submit">START AGAIN</button>
+        <audio id="win-sound" src="/assets/audio/cha-ching-cash-register-jam-fx-1-00-04.mp3"></audio>
+        <audio id="lose-sound" src="/assets/audio/tuba-game-over-epic-stock-media-1-00-05.mp3"></audio>
       </div>
     </section>
   </main>
@@ -92,10 +94,11 @@
         <li>If the player chooses to get another card and goes over 21, they're bust (lose) and don't even get to see
           the
           house's hand!</li>
-        <li>If you win a hand you score 3 points. If you lose a hand, you lose 1 point</li>
-        <li>Get to 10 points to win the game</li>
+        <li>You bet on each hand and will win or lose the size of your bet after each result</li>
+        <li>Double your bankroll (take 100 to 200) to win the game. Lose your bankroll and that's it, the game is over!
+        </li>
       </ul>
-      <p><em>Click "DEAL" to start!! Have fun!!</em></p>
+      <p>Click "DEAL" to start!! Have fun!!</p>
     </dialog>
   </aside>
   <footer>

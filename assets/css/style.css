@@ -76,14 +76,14 @@ img {
 dialog {
     position: absolute;
     left: 25%;
-    top: 15%;
+    top: 10%;
     font-family: 'Inter';
     font-size: 150%;
     color: white;
     width: 50%;
     background: darkslategrey;
     border: none;
-    padding: 1%;
+    padding: 3%;
 }
 
 dialog::backdrop {
@@ -174,7 +174,6 @@ dialog::backdrop {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: blueviolet;
 }
 
 #deal-button-area {
@@ -184,7 +183,6 @@ dialog::backdrop {
     align-items: center;
     width: 80%;
     padding: 1%;
-    background-color: blueviolet;
 }
 
 .chip-area {
@@ -239,6 +237,8 @@ dialog::backdrop {
 
 #restart-button {
     visibility: hidden;
+    background-color: red;
+    border-color: darkred;
 }
 
 /*score section*/
@@ -341,10 +341,16 @@ main {
 
     .game-button {
         font-size: 150%;
+        box-shadow: none;
     }
 
     .game-card {
         font-size: 150%;
+        box-shadow: none;
+    }
+
+    .chip-area {
+        font-size: 80%;
     }
 
     #result-box {
@@ -356,6 +362,10 @@ main {
     }
 
     #player-score {
+        font-size: 150%;
+    }
+
+    #rules-modal {
         font-size: 150%;
     }
 }
@@ -382,16 +392,35 @@ main {
         width: 95%;
     }
 
+    .game-score-area {
+        font-size: medium;
+    }
+
     .game-button {
         font-size: 100%;
+        box-shadow: none;
     }
 
     .game-card {
         font-size: 80%;
+        box-shadow: none;
+        width: 30%;
+    }
+
+    .chip-area {
+        font-size: 60%;
     }
 
     #result-box {
         font-size: 100%;
+    }
+
+    #chip-box {
+        font-size: 200%;
+    }
+
+    #bet-box {
+        font-size: 200%
     }
 
     #house-score {
@@ -399,6 +428,10 @@ main {
     }
 
     #player-score {
+        font-size: 100%;
+    }
+
+    #rules-modal {
         font-size: 100%;
     }
 }

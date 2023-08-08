@@ -8,6 +8,12 @@ let houseScoreBox = document.getElementById('house-score');
 let resultBox = document.getElementById('result-box');
 let playerScoreBox = document.getElementById('player-score');
 let playerBet = document.getElementById('bet-box');
+let playerBox1 = document.getElementById('player-card-1-img');
+let playerBox2 = document.getElementById('player-card-2-img');
+let playerBox3 = document.getElementById('player-card-3-img');
+let houseBox1 = document.getElementById('house-card-1-img');
+let houseBox2 = document.getElementById('house-card-2-img');
+let houseBox3 = document.getElementById('house-card-3-img');
 
 let dealButton = document.getElementById('deal-button');
 dealButton.addEventListener("click", function () {
@@ -131,7 +137,6 @@ function checkBetSize() {
     else (playerCards());
 }
 
-
 /**
  * game starts with player receiving two cards
  */
@@ -150,8 +155,8 @@ function playerCards() {
 function displayPlayerCards(operand1, operand2) {
     let playerCard1 = cards[operand1];
     let playerCard2 = cards[operand2];
-    document.getElementById('player-card-1-img').src = playerCard1.img;
-    document.getElementById('player-card-2-img').src = playerCard2.img;
+    playerBox1.src = playerCard1.img;
+    playerBox2.src = playerCard2.img;
     playerScoreBox.textContent = playerCard1.value + playerCard2.value;
 }
 
@@ -173,8 +178,8 @@ function displayHouseCards(operand1, operand2) {
     let houseCard1 = cards[operand1];
     let houseCard2 = cards[operand2];
     let houseScore = houseCard1.value + houseCard2.value;
-    document.getElementById('house-card-1-img').src = houseCard1.img;
-    document.getElementById('house-card-2-img').src = houseCard2.img;
+    houseBox1.src = houseCard1.img;
+    houseBox2.src = houseCard2.img;
     houseScoreBox.textContent = houseScore;
     hitHouseCard(houseScore);
 }
@@ -188,12 +193,11 @@ function hitHouseCard(houseScore) {
     else {
         let num6 = Math.floor(Math.random() * 52);
         let houseCard3 = cards[num6];
-        document.getElementById('house-card-3-img').src = houseCard3.img;
+        houseBox3.src = houseCard3.img;
         let newHouseScore = houseScore + houseCard3.value;
         houseScoreBox.textContent = newHouseScore;
         checkGameResult();
     }
-
 }
 
 /**
@@ -202,7 +206,7 @@ function hitHouseCard(houseScore) {
 
 function hitCard() {
     let playerCard3 = cards[Math.floor(Math.random() * 52)];
-    document.getElementById('player-card-3-img').src = playerCard3.img;
+    playerBox3.src = playerCard3.img;
     hitButton.style.visibility = "hidden";
     standButton.style.visibility = "hidden";
     calculatePlayerTotal(playerCard3);
@@ -274,13 +278,17 @@ function checkTotal(newScore) {
     if (newScore > 199) {
         resultBox.textContent = "You've done it, doubled Bankroll!";
         restartButton.style.visibility = "visible";
+        document.getElementById('win-sound').play();
     }
     else if (newScore === 0) {
         resultBox.textContent = "You're Bust! Try Again?";
         restartButton.style.visibility = "visible";
+        document.getElementById('lose-sound').play();
     }
 
-    else { newButton.style.visibility = "visible"; }
+    else {
+        newButton.style.visibility = "visible";
+    }
 }
 
 /**
@@ -290,16 +298,15 @@ function checkTotal(newScore) {
 function resetGame() {
     dealButton.style.visibility = "visible";
     newButton.style.visibility = "hidden";
-    document.getElementById('player-card-1-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('player-card-2-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('player-card-3-img').src = "/assets/images/back_of_card.png";
+    playerBox1.src = "/assets/images/back_of_card.png";
+    playerBox2.src = "/assets/images/back_of_card.png";
+    playerBox3.src = "/assets/images/back_of_card.png";
     houseScoreBox.textContent = 0;
-    document.getElementById('house-card-1-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('house-card-2-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('house-card-3-img').src = "/assets/images/back_of_card.png";
+    houseBox1.src = "/assets/images/back_of_card.png";
+    houseBox2.src = "/assets/images/back_of_card.png";
+    houseBox3.src = "/assets/images/back_of_card.png";
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
-    playerBet.value = "";
     scoreBox.style.visibility = "visible";
 }
 
@@ -311,13 +318,13 @@ function restartGame() {
     dealButton.style.visibility = "visible";
     newButton.style.visibility = "hidden";
     restartButton.style.visibility = "hidden";
-    document.getElementById('player-card-1-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('player-card-2-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('player-card-3-img').src = "/assets/images/back_of_card.png";
+    playerBox1.src = "/assets/images/back_of_card.png";
+    playerBox2.src = "/assets/images/back_of_card.png";
+    playerBox3.src = "/assets/images/back_of_card.png";
     houseScoreBox.textContent = 0;
-    document.getElementById('house-card-1-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('house-card-2-img').src = "/assets/images/back_of_card.png";
-    document.getElementById('house-card-3-img').src = "/assets/images/back_of_card.png";
+    houseBox1.src = "/assets/images/back_of_card.png";
+    houseBox2.src = "/assets/images/back_of_card.png";
+    houseBox3.src = "/assets/images/back_of_card.png";
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
     playerBet.value = "";
