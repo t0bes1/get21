@@ -9,19 +9,19 @@ Get 21 is a fun card game for users that want to practice basic blackjack skills
 
 As a user I want to be able to play a card game with simple rules, so that I can have fun and practice my decision making skills
 
-As a user I want the game to begin at the start when arriving at the site, so that I can start fresh when I #
+As a user I want the game to begin at the start when arriving at the site, so that I can start a fresh go when I first arrive back at the page
 
 As a user I want to be able to see the cards I'm dealt and get shown the total I am on, so that I am able to make a good decision on what to do next
 
 As a user I want to be able to see whether I have won or lost the hand (and why) so that I can make goods decisions in future rounds of the game
 
-As a user I want to be able to bet different amounts on different hands to try  my luck and "go big" if I wish, so that the game is engaging and fun to play
+As a user I want to be able to bet different amounts on different hands to try my luck and "go big" if I wish, so that the game is engaging and fun to play
 
 As a user I want to see the score as I am playing so that I can understand how well I am doing in the game
 
 As a user I want to understand that a 200+ bankroll is a winning score so that I can aim to reach this goal and receive some congratulations if I achieve it
 
-As a user I want to understand that a 0 is a losing score so that I can aim to avoid reaching this score and receive some commiserations if I ultimately achieve it
+As a user I want to understand that a 0 bankroll is a losing score so that I can aim to avoid reaching this score and receive some commiserations if I ultimately achieve it
 
 As a user I want to hear celebration or commiseration sounds depending on if I win or lose the game, so that I can enjoy the experience and further understand what the outcome has been achieved
 
@@ -48,7 +48,7 @@ There is a section showing the players bet, their bankroll, the game action butt
 
 The page includes a footer, with a link to my github:
 
-![Footer](../get21/documentation/footer-get21.png)
+![Footer](documentation/footer-get21.png)
 
 ---
 ## Technologies Used
@@ -110,7 +110,6 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
 
 ---
-​
 ### Bugs
 + ##### Solved bugs
     1. Hand was plaed despite the user selecting a stake greater than the player's bankroll or even at a 0 level
@@ -126,7 +125,7 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 ---
 ## Validator testing
 + ### HTML
-  #### Home Page
+  #### Main Page
   - No errors or warnings were found when passing through the official W3C validator.
 
 ![W3C Checker](documentation/w3c-checker-get21.png)
