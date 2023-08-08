@@ -51,58 +51,58 @@ infoButton.addEventListener("click", function () {
  */
 
 const cards = [
-    { 'rank': 'Ace of hearts', 'value': 11, 'img': '/assets/images/ace_of_hearts.png', },
-    { 'rank': 'Two of hearts', 'value': 2, 'img': '/assets/images/2_of_hearts.png', },
-    { 'rank': 'Three of hearts', 'value': 3, 'img': '/assets/images/3_of_hearts.png', },
-    { 'rank': 'Four of hearts', 'value': 4, 'img': '/assets/images/4_of_hearts.png', },
-    { 'rank': 'Five of hearts', 'value': 5, 'img': '/assets/images/5_of_hearts.png', },
-    { 'rank': 'Six of hearts', 'value': 6, 'img': '/assets/images/6_of_hearts.png', },
-    { 'rank': 'Seven of hearts', 'value': 7, 'img': '/assets/images/7_of_hearts.png', },
-    { 'rank': 'Eight of hearts', 'value': 8, 'img': '/assets/images/8_of_hearts.png', },
-    { 'rank': 'Nine of hearts', 'value': 9, 'img': '/assets/images/9_of_hearts.png', },
-    { 'rank': 'Ten of hearts', 'value': 10, 'img': '/assets/images/10_of_hearts.png', },
-    { 'rank': 'Jack of hearts', 'value': 10, 'img': '/assets/images/jack_of_hearts2.png', },
-    { 'rank': 'Queen of hearts', 'value': 10, 'img': '/assets/images/queen_of_hearts2.png', },
-    { 'rank': 'King of hearts', 'value': 10, 'img': '/assets/images/king_of_hearts2.png', },
-    { 'rank': 'Ace of clubs', 'value': 11, 'img': '/assets/images/ace_of_clubs.png', },
-    { 'rank': 'Two of clubs', 'value': 2, 'img': '/assets/images/2_of_clubs.png', },
-    { 'rank': 'Three of clubs', 'value': 3, 'img': '/assets/images/3_of_clubs.png', },
-    { 'rank': 'Four of clubs', 'value': 4, 'img': '/assets/images/4_of_clubs.png', },
-    { 'rank': 'Five of clubs', 'value': 5, 'img': '/assets/images/5_of_clubs.png', },
-    { 'rank': 'Six of clubs', 'value': 6, 'img': '/assets/images/6_of_clubs.png', },
-    { 'rank': 'Seven of clubs', 'value': 7, 'img': '/assets/images/7_of_clubs.png', },
-    { 'rank': 'Eight of clubs', 'value': 8, 'img': '/assets/images/8_of_clubs.png', },
-    { 'rank': 'Nine of clubs', 'value': 9, 'img': '/assets/images/9_of_clubs.png', },
-    { 'rank': 'Ten of clubs', 'value': 10, 'img': '/assets/images/10_of_clubs.png', },
-    { 'rank': 'Jack of clubs', 'value': 10, 'img': '/assets/images/jack_of_clubs2.png', },
-    { 'rank': 'Queen of clubs', 'value': 10, 'img': '/assets/images/queen_of_clubs2.png', },
-    { 'rank': 'King of clubs', 'value': 10, 'img': '/assets/images/king_of_clubs2.png', },
-    { 'rank': 'Ace of diamonds', 'value': 11, 'img': '/assets/images/ace_of_diamonds.png', },
-    { 'rank': 'Two of diamonds', 'value': 2, 'img': '/assets/images/2_of_diamonds.png', },
-    { 'rank': 'Three of diamonds', 'value': 3, 'img': '/assets/images/3_of_diamonds.png', },
-    { 'rank': 'Four of diamonds', 'value': 4, 'img': '/assets/images/4_of_diamonds.png', },
-    { 'rank': 'Five of diamonds', 'value': 5, 'img': '/assets/images/5_of_diamonds.png', },
-    { 'rank': 'Six of diamonds', 'value': 6, 'img': '/assets/images/6_of_diamonds.png', },
-    { 'rank': 'Seven of diamonds', 'value': 7, 'img': '/assets/images/7_of_diamonds.png', },
-    { 'rank': 'Eight of diamonds', 'value': 8, 'img': '/assets/images/8_of_diamonds.png', },
-    { 'rank': 'Nine of diamonds', 'value': 9, 'img': '/assets/images/9_of_diamonds.png', },
-    { 'rank': 'Ten of diamonds', 'value': 10, 'img': '/assets/images/10_of_diamonds.png', },
-    { 'rank': 'Jack of diamonds', 'value': 10, 'img': '/assets/images/jack_of_diamonds2.png', },
-    { 'rank': 'Queen of diamonds', 'value': 10, 'img': '/assets/images/queen_of_diamonds2.png', },
-    { 'rank': 'King of diamonds', 'value': 10, 'img': '/assets/images/king_of_diamonds2.png', },
-    { 'rank': 'Ace of spades', 'value': 11, 'img': '/assets/images/ace_of_spades.png', },
-    { 'rank': 'Two of spades', 'value': 2, 'img': '/assets/images/2_of_spades.png', },
-    { 'rank': 'Three of spades', 'value': 3, 'img': '/assets/images/3_of_spades.png', },
-    { 'rank': 'Four of spades', 'value': 4, 'img': '/assets/images/4_of_spades.png', },
-    { 'rank': 'Five of spades', 'value': 5, 'img': '/assets/images/5_of_spades.png', },
-    { 'rank': 'Six of spades', 'value': 6, 'img': '/assets/images/6_of_spades.png', },
-    { 'rank': 'Seven of spades', 'value': 7, 'img': '/assets/images/7_of_spades.png', },
-    { 'rank': 'Eight of spades', 'value': 8, 'img': '/assets/images/8_of_spades.png', },
-    { 'rank': 'Nine of spades', 'value': 9, 'img': '/assets/images/9_of_spades.png', },
-    { 'rank': 'Ten of spades', 'value': 10, 'img': '/assets/images/10_of_spades.png', },
-    { 'rank': 'Jack of spades', 'value': 10, 'img': '/assets/images/jack_of_spades2.png', },
-    { 'rank': 'Queen of spades', 'value': 10, 'img': '/assets/images/queen_of_spades2.png', },
-    { 'rank': 'King of spades', 'value': 10, 'img': '/assets/images/king_of_spades2.png', },
+    { 'rank': 'Ace of hearts', 'value': 11, 'img': 'assets/images/ace_of_hearts.png', },
+    { 'rank': 'Two of hearts', 'value': 2, 'img': 'assets/images/2_of_hearts.png', },
+    { 'rank': 'Three of hearts', 'value': 3, 'img': 'assets/images/3_of_hearts.png', },
+    { 'rank': 'Four of hearts', 'value': 4, 'img': 'assets/images/4_of_hearts.png', },
+    { 'rank': 'Five of hearts', 'value': 5, 'img': 'assets/images/5_of_hearts.png', },
+    { 'rank': 'Six of hearts', 'value': 6, 'img': 'assets/images/6_of_hearts.png', },
+    { 'rank': 'Seven of hearts', 'value': 7, 'img': 'assets/images/7_of_hearts.png', },
+    { 'rank': 'Eight of hearts', 'value': 8, 'img': 'assets/images/8_of_hearts.png', },
+    { 'rank': 'Nine of hearts', 'value': 9, 'img': 'assets/images/9_of_hearts.png', },
+    { 'rank': 'Ten of hearts', 'value': 10, 'img': 'assets/images/10_of_hearts.png', },
+    { 'rank': 'Jack of hearts', 'value': 10, 'img': 'assets/images/jack_of_hearts2.png', },
+    { 'rank': 'Queen of hearts', 'value': 10, 'img': 'assets/images/queen_of_hearts2.png', },
+    { 'rank': 'King of hearts', 'value': 10, 'img': 'assets/images/king_of_hearts2.png', },
+    { 'rank': 'Ace of clubs', 'value': 11, 'img': 'assets/images/ace_of_clubs.png', },
+    { 'rank': 'Two of clubs', 'value': 2, 'img': 'assets/images/2_of_clubs.png', },
+    { 'rank': 'Three of clubs', 'value': 3, 'img': 'assets/images/3_of_clubs.png', },
+    { 'rank': 'Four of clubs', 'value': 4, 'img': 'assets/images/4_of_clubs.png', },
+    { 'rank': 'Five of clubs', 'value': 5, 'img': 'assets/images/5_of_clubs.png', },
+    { 'rank': 'Six of clubs', 'value': 6, 'img': 'assets/images/6_of_clubs.png', },
+    { 'rank': 'Seven of clubs', 'value': 7, 'img': 'assets/images/7_of_clubs.png', },
+    { 'rank': 'Eight of clubs', 'value': 8, 'img': 'assets/images/8_of_clubs.png', },
+    { 'rank': 'Nine of clubs', 'value': 9, 'img': 'assets/images/9_of_clubs.png', },
+    { 'rank': 'Ten of clubs', 'value': 10, 'img': 'assets/images/10_of_clubs.png', },
+    { 'rank': 'Jack of clubs', 'value': 10, 'img': 'assets/images/jack_of_clubs2.png', },
+    { 'rank': 'Queen of clubs', 'value': 10, 'img': 'assets/images/queen_of_clubs2.png', },
+    { 'rank': 'King of clubs', 'value': 10, 'img': 'assets/images/king_of_clubs2.png', },
+    { 'rank': 'Ace of diamonds', 'value': 11, 'img': 'assets/images/ace_of_diamonds.png', },
+    { 'rank': 'Two of diamonds', 'value': 2, 'img': 'assets/images/2_of_diamonds.png', },
+    { 'rank': 'Three of diamonds', 'value': 3, 'img': 'assets/images/3_of_diamonds.png', },
+    { 'rank': 'Four of diamonds', 'value': 4, 'img': 'assets/images/4_of_diamonds.png', },
+    { 'rank': 'Five of diamonds', 'value': 5, 'img': 'assets/images/5_of_diamonds.png', },
+    { 'rank': 'Six of diamonds', 'value': 6, 'img': 'assets/images/6_of_diamonds.png', },
+    { 'rank': 'Seven of diamonds', 'value': 7, 'img': 'assets/images/7_of_diamonds.png', },
+    { 'rank': 'Eight of diamonds', 'value': 8, 'img': 'assets/images/8_of_diamonds.png', },
+    { 'rank': 'Nine of diamonds', 'value': 9, 'img': 'assets/images/9_of_diamonds.png', },
+    { 'rank': 'Ten of diamonds', 'value': 10, 'img': 'assets/images/10_of_diamonds.png', },
+    { 'rank': 'Jack of diamonds', 'value': 10, 'img': 'assets/images/jack_of_diamonds2.png', },
+    { 'rank': 'Queen of diamonds', 'value': 10, 'img': 'assets/images/queen_of_diamonds2.png', },
+    { 'rank': 'King of diamonds', 'value': 10, 'img': 'assets/images/king_of_diamonds2.png', },
+    { 'rank': 'Ace of spades', 'value': 11, 'img': 'assets/images/ace_of_spades.png', },
+    { 'rank': 'Two of spades', 'value': 2, 'img': 'assets/images/2_of_spades.png', },
+    { 'rank': 'Three of spades', 'value': 3, 'img': 'assets/images/3_of_spades.png', },
+    { 'rank': 'Four of spades', 'value': 4, 'img': 'assets/images/4_of_spades.png', },
+    { 'rank': 'Five of spades', 'value': 5, 'img': 'assets/images/5_of_spades.png', },
+    { 'rank': 'Six of spades', 'value': 6, 'img': 'assets/images/6_of_spades.png', },
+    { 'rank': 'Seven of spades', 'value': 7, 'img': 'assets/images/7_of_spades.png', },
+    { 'rank': 'Eight of spades', 'value': 8, 'img': 'assets/images/8_of_spades.png', },
+    { 'rank': 'Nine of spades', 'value': 9, 'img': 'assets/images/9_of_spades.png', },
+    { 'rank': 'Ten of spades', 'value': 10, 'img': 'assets/images/10_of_spades.png', },
+    { 'rank': 'Jack of spades', 'value': 10, 'img': 'assets/images/jack_of_spades2.png', },
+    { 'rank': 'Queen of spades', 'value': 10, 'img': 'assets/images/queen_of_spades2.png', },
+    { 'rank': 'King of spades', 'value': 10, 'img': 'assets/images/king_of_spades2.png', },
 ];
 
 /**
@@ -298,13 +298,13 @@ function checkTotal(newScore) {
 function resetGame() {
     dealButton.style.visibility = "visible";
     newButton.style.visibility = "hidden";
-    playerBox1.src = "/assets/images/back_of_card.png";
-    playerBox2.src = "/assets/images/back_of_card.png";
-    playerBox3.src = "/assets/images/back_of_card.png";
+    playerBox1.src = "assets/images/back_of_card.png";
+    playerBox2.src = "assets/images/back_of_card.png";
+    playerBox3.src = "assets/images/back_of_card.png";
     houseScoreBox.textContent = 0;
-    houseBox1.src = "/assets/images/back_of_card.png";
-    houseBox2.src = "/assets/images/back_of_card.png";
-    houseBox3.src = "/assets/images/back_of_card.png";
+    houseBox1.src = "assets/images/back_of_card.png";
+    houseBox2.src = "assets/images/back_of_card.png";
+    houseBox3.src = "assets/images/back_of_card.png";
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
     scoreBox.style.visibility = "visible";
@@ -318,13 +318,13 @@ function restartGame() {
     dealButton.style.visibility = "visible";
     newButton.style.visibility = "hidden";
     restartButton.style.visibility = "hidden";
-    playerBox1.src = "/assets/images/back_of_card.png";
-    playerBox2.src = "/assets/images/back_of_card.png";
-    playerBox3.src = "/assets/images/back_of_card.png";
+    playerBox1.src = "assets/images/back_of_card.png";
+    playerBox2.src = "assets/images/back_of_card.png";
+    playerBox3.src = "assets/images/back_of_card.png";
     houseScoreBox.textContent = 0;
-    houseBox1.src = "/assets/images/back_of_card.png";
-    houseBox2.src = "/assets/images/back_of_card.png";
-    houseBox3.src = "/assets/images/back_of_card.png";
+    houseBox1.src = "assets/images/back_of_card.png";
+    houseBox2.src = "assets/images/back_of_card.png";
+    houseBox3.src = "assets/images/back_of_card.png";
     playerScoreBox.textContent = 0;
     resultBox.textContent = "";
     playerBet.value = "";

@@ -32,19 +32,19 @@ As a user I want to hear celebration or commiseration sounds depending on if I w
 
 The single page includes a header, with a clickable info button showing the rules:
 
-![Header](../get21/documentation/header-get21.png)
+![Header](documentation/header-get21.png)
 
 When clicked, the rules are shown as follows:
 
-![Modal](../get21/documentation/modal-get21.png)
+![Modal](documentation/modal-get21.png)
 
 A main game area shows 3 cards for the player and 3 cards for the house in the main game area:
 
-![Game Area](../get21/documentation/game-area-get21.png)
+![Game Area](documentation/game-area-get21.png)
 
 There is a section showing the players bet, their bankroll, the game action buttons and a message box:
 
-![Score Area](../get21/documentation/score-area-get21.png)
+![Score Area](documentation/score-area-get21.png)
 
 The page includes a footer, with a link to my github:
 
@@ -67,7 +67,7 @@ The page includes a footer, with a link to my github:
 ## Wireframes
 
 The basic structure of the website was created using Balsamiq:
-[here](../get21/documentation/get21-wireframes.pdf)
+[here](documentation/get21-wireframes.pdf)
 
 ## Testing
 
@@ -77,11 +77,11 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
 + The website was checked with 
 
-    - Desktop Screens: [here](../get21/documentation/desktop-get21.png)
+    - Desktop Screens: [here](documentation/desktop-get21.png)
 
-    - Tablet Screens: [here](../get21/documentation/tablet-get21.png)
+    - Tablet Screens: [here](documentation/tablet-get21.png)
 
-    - Mobile Screens: [here](../get21/documentation/mobile-get21.png)
+    - Mobile Screens: [here](documentation/mobile-get21.png)
 
 + The functionality of the game in the website was checked as well by different users.
 
@@ -129,17 +129,17 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   #### Home Page
   - No errors or warnings were found when passing through the official W3C validator.
 
-![W3C Checker](../get21/documentation/w3c-checker-get21.png)
+![W3C Checker](documentation/w3c-checker-get21.png)
     
 + ### CSS
   - No errors were found when passing through the official W3C (Jigsaw) validator:
 
-![W3C CSS Checker](../get21/documentation/w3c-checker-css-get21.png)
+![W3C CSS Checker](documentation/w3c-checker-css-get21.png)
 
 + ### Lighthouse Report: Accessibility and performance 
   - Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
 
-![Lighthouse](../get21/documentation/lighthouse-get21.png)
+![Lighthouse](documentation/lighthouse-get21.png)
 ---
 ## Deployment
 
