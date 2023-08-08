@@ -1,6 +1,6 @@
 
 ---
-![Get21](../get21/documentation/logo-get21.png)
+![Get21](documentation/logo-get21.png)
 
 Get 21 is a fun card game for users that want to practice basic blackjack skills. Double your bankroll to win the game! ... but loss all your chips and the game is over!
 
