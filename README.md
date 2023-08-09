@@ -7,23 +7,23 @@ Get 21 is a fun card game for users that want to practice basic blackjack skills
 
 ## User Stories
 
-As a user I want to be able to play a card game with simple rules, so that I can have fun and practice my decision making skills
+ - As a user I want to be able to play a card game with simple rules, so that I can have fun and practice my decision making skills
 
-As a user I want the game to begin at the start when arriving at the site, so that I can start a fresh go when I first arrive back at the page
+ - As a user I want the game to begin at the start when arriving at the site, so that I can start a fresh go when I first arrive back at the page
 
-As a user I want to be able to see the cards I'm dealt and get shown the total I am on, so that I am able to make a good decision on what to do next
+ - As a user I want to be able to see the cards I'm dealt and get shown the total I am on, so that I am able to make a good decision on what to do next
 
-As a user I want to be able to see whether I have won or lost the hand (and why) so that I can make goods decisions in future rounds of the game
+ - As a user I want to be able to see whether I have won or lost the hand (and why) so that I can make goods decisions in future rounds of the game
 
-As a user I want to be able to bet different amounts on different hands to try my luck and "go big" if I wish, so that the game is engaging and fun to play
+ - As a user I want to be able to bet different amounts on different hands to try my luck and "go big" if I wish, so that the game is engaging and fun to play
 
-As a user I want to see the score as I am playing so that I can understand how well I am doing in the game
+ - As a user I want to see the score as I am playing so that I can understand how well I am doing in the game
 
-As a user I want to understand that a 200+ bankroll is a winning score so that I can aim to reach this goal and receive some congratulations if I achieve it
+ - As a user I want to understand that a 200+ bankroll is a winning score so that I can aim to reach this goal and receive some congratulations if I achieve it
 
-As a user I want to understand that a 0 bankroll is a losing score so that I can aim to avoid reaching this score and receive some commiserations if I ultimately achieve it
+ - As a user I want to understand that a 0 bankroll is a losing score so that I can aim to avoid reaching this score and receive some commiserations if I ultimately achieve it
 
-As a user I want to hear celebration or commiseration sounds depending on if I win or lose the game, so that I can enjoy the experience and further understand what the outcome has been achieved
+ - As a user I want to hear celebration or commiseration sounds depending on if I win or lose the game, so that I can enjoy the experience and further understand what the outcome has been achieved
 
 
 ## Features
@@ -50,12 +50,19 @@ The page includes a footer, with a link to my github:
 
 ![Footer](documentation/footer-get21.png)
 
+## Technical Diagram
+
+The game logic and technical workflow was designed in advance (using Miro), ensuring a sound game play flow:
+
+![Game Logic](documentation/get21-technical-diagram.jpg)
 ---
 ## Technologies Used
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items symmetrically on the pages.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used to build game play logic and features.
+- [Miro](https://miro.com/templates/diagrams/) was used to sketch the technical diagram.
 - [Balsamiq](https://balsamiq.com/) was used to make wireframes for the website.
 - [VSCode](https://code.visualstudio.com/) was used as the main tool to write and edit code.
 - [Git](https://git-scm.com/) was used for the version control of the website.
@@ -115,9 +122,22 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 ---
 ### Bugs
 + ##### Solved bugs
-    1. Hand was plaed despite the user selecting a stake greater than the player's bankroll or even at a 0 level
+    1.  A hand was played despite the user selecting an undefined or 0 level bet. This was due to an error in the checkBetSize function, in which these scenarios were not validated:
+
+    ![Bug1 Issue](documentation/bug1-found.png)
     
-        *Solutions:* a game function was added to test the stake amount vs the bankroll and ensure it w3as greater than 0
+    Solutions: further tests were added to the function to capture these additional scenarios:
+    
+    ![Bug1 Solution](documentation/bug1-solved.png)
+    ---
+
+    2.  The game wouldn't return to a new state, following the completion of the stated game goal. It would simply continue and fire a new hand. This was due to missing commands in the newHand function:
+
+    ![Bug2 Issue](documentation/bug2-found.png)
+    
+    Solutions: a restart function was created that fired the newHand function, whilst also triggering other necessary reset commands:
+
+    ![Bug2 Solution](documentation/bug2-solved.png)
     ---
 + ##### Unsolved bugs
     - None.
@@ -165,6 +185,7 @@ In your IDE Terminal, type the following command to clone my repository:
   - All content has been created personally, aside from the card images
   - [Public Domain Card Images](https://opengameart.org/content/playing-cards-vector-png) were acquired from Open Game Art; thanks to them for making the design process much easier!
   - [Uppbeat](https://uppbeat.io/sfx) provided the win & lose game sound effects
+  - [Pixabay](https://pixabay.com/sound-effects/) provided the win & lose hand sound effects
 ---
 
 ## Acknowledgments
