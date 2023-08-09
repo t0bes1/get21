@@ -140,7 +140,7 @@ In order to confirm the correct functionality, responsiveness, and appearance:
     ![Bug2 Solution](documentation/bug2-solved.png)
     ---
 + ##### Unsolved bugs
-    - None.
+    - The cards sometimes appear to lag slgihtly, appearing in a slightly illogical order. Whilst this does not impact gam play materially, it would ideally be solved to improve the game UX.
 
 + ##### Mistakes
     - The game was initially created without the bet feature. This made the user experience lack engagement.
