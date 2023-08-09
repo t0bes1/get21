@@ -285,13 +285,13 @@ function reduceScore() {
 }
 
 /**
- * checks whether player has reached a 200 or 0 points balance and has won the game
+ * checks whether player has reached a 200 or 0 points balance and has won or lost the game
  */
 function checkTotal(newScore) {
     if (newScore > 199) {
         resultBox.textContent = "You've done it, doubled Bankroll!";
         resultBox.style.backgroundColor = "darkgreen";
-        resultBox.style.border = "none";
+        resultBox.style.borderColor = "darkgreen";
         bankBox.style.borderColor = "darkgreen";
         restartButton.style.visibility = "visible";
         console.log(audioTog.innerHTML);
@@ -300,7 +300,7 @@ function checkTotal(newScore) {
     else if (newScore === 0) {
         resultBox.textContent = "You're Bust! Try Again?";
         resultBox.style.backgroundColor = "red";
-        resultBox.style.border = "none";
+        resultBox.style.borderColor = "red";
         bankBox.style.borderColor = "red";
         restartButton.style.visibility = "visible";
         if (audioTog.innerHTML == soundOn) { document.getElementById('lose-game-sound').play(); }
@@ -335,7 +335,7 @@ function restartGame() {
     newHand();
     restartButton.style.visibility = "hidden";
     resultBox.style.backgroundColor = "navy";
-    resultBox.style.border = "solid";
+    resultBox.style.borderColor = "blue";
     bankBox.style.borderColor = "gold";
     playerBet.value = "";
     bankBox.innerText = 100;
