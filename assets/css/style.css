@@ -72,6 +72,16 @@ a:hover {
     text-align: center;
 }
 
+#sound-toggle {
+    display: flex;
+    align-items: center;
+    background-color: gold;
+    color: navy;
+    padding: 0.5rem;
+    border: none;
+    font-size: 5rem;
+}
+
 #info-modal {
     display: flex;
     align-items: center;
@@ -79,7 +89,7 @@ a:hover {
     color: navy;
     padding: 0.5rem;
     border: none;
-    font-size: x-large;
+    font-size: 5rem;
 }
 
 #info-modal:hover {
@@ -114,6 +124,10 @@ dialog::backdrop {
 }
 
 /*house & player game areas*/
+.user-container {
+    width: 15rem;
+}
+
 #house-section {
     display: flex;
     flex-direction: row;

@@ -13,15 +13,21 @@
 </head>
 
 <body>
+  <!--header containing the logo, and information icon for opening the a modal containing game rules-->
   <header>
     <div id="top-bar">
       <button id="info-modal" aria-label="get info on rules"><i class="fa-solid fa-circle-info"></i></button>
       <h1 id="top-logo">Get 21</h1>
+      <button id="sound-toggle" onclick="soundTog()" aria-label="toggle sound on or off"><i
+          class="fa-solid fa-volume-xmark"></i></button>
     </div>
   </header>
   <main>
+    <!--section containing the House playing area, including its score and 3 cards-->
     <section id="house-section">
-      <h2>The House <i class="fa-solid fa-dice"></i></h2>
+      <div class="user-container">
+        <h2>The House <i class="fa-solid fa-dice"></i></h2>
+      </div>
       <div id="house-container">
         <div class="game-area">
           <div class="game-card" id="house-card-1">
@@ -46,8 +52,11 @@
         </div>
       </div>
     </section>
+    <!--section containing the users playing area, including their score and 3 cards-->
     <section id="player-section">
-      <h2>The Player <i class="fa-solid fa-user-secret"></i></h2>
+      <div class="user-container">
+        <h2>The Player <i class="fa-solid fa-user-secret"></i></h2>
+      </div>
       <div id="player-container">
         <div class="game-area">
           <div class="game-card" id="player-card-1">
@@ -72,6 +81,7 @@
         </div>
       </div>
     </section>
+    <!--game action section, including bet size selector and game play buttons-->
     <section id="deal-button-section">
       <div class="chip-area">
         <h3 class="bet-message">Enter Bet:</h3>
@@ -85,6 +95,7 @@
           HAND</button>
       </div>
     </section>
+    <!--game information section, including running bank balance indicator and game message container-->
     <section id="score-section">
       <div class="chip-area">
         <h3>Bankroll:</h3>
@@ -94,11 +105,12 @@
         <div id="result-box"></div>
         <button class="game-button" id="restart-button" data-type="submit" aria-label="restart button">START
           AGAIN</button>
-        <audio id="win-sound" src="assets/audio/cha-ching-cash-register-jam-fx-1-00-04.mp3"></audio>
-        <audio id="lose-sound" src="assets/audio/tuba-game-over-epic-stock-media-1-00-05.mp3"></audio>
+        <audio id="win-sound" src="assets/audio/cha-ching-cash-register-jam.mp3"></audio>
+        <audio id="lose-sound" src="assets/audio/tuba-game-over.mp3"></audio>
       </div>
     </section>
   </main>
+  <!--game rules contained in modal (triggered from header)-->
   <aside>
     <dialog id="rules-modal">
       <h4>Get 21 : How the game works</h4>
@@ -119,6 +131,7 @@
       <button type="submit" id="info-close-button" onclick="dialog.close()">Close</button>
     </dialog>
   </aside>
+  <!--simple footer with info on game creator and link to github-->
   <footer>
     <div id="footer-bar">
       <div id="footer-message">

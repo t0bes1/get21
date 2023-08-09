@@ -15,6 +15,7 @@ const houseBox1 = document.getElementById('house-card-1-img');
 const houseBox2 = document.getElementById('house-card-2-img');
 const houseBox3 = document.getElementById('house-card-3-img');
 const newCard = "assets/images/back_of_card.png";
+const audioTog = document.getElementById("sound-toggle");
 
 /**
  * deck of cards variable, with all 52 possible cards, each with a value for the game
@@ -123,6 +124,18 @@ dialog.addEventListener("click", e => {
         dialog.close();
     }
 });
+
+/**
+ * modal click triggers rules, with close on click outside its box
+ */
+function soundTog() {
+    if (audioTog.innerHTML == `<i class="fa-solid fa-volume-xmark"></i>`) {
+        audioTog.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+    }
+    else {
+        audioTog.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+    }
+}
 
 /**
  * check bet size is allowable (it cannot be NaN, 0, or > player bank balance)
@@ -277,7 +290,8 @@ function checkTotal(newScore) {
         resultBox.style.border = "none";
         bankBox.style.borderColor = "darkgreen";
         restartButton.style.visibility = "visible";
-        document.getElementById('win-sound').play();
+        console.log(audioTog.innerHTML);
+        if (audioTog.innerHTML == `<i class="fa-solid fa-volume-high"></i>`) { document.getElementById('win-sound').play(); }
     }
     else if (newScore === 0) {
         resultBox.textContent = "You're Bust! Try Again?";
@@ -285,7 +299,7 @@ function checkTotal(newScore) {
         resultBox.style.border = "none";
         bankBox.style.borderColor = "red";
         restartButton.style.visibility = "visible";
-        document.getElementById('lose-sound').play();
+        if (audioTog.innerHTML == `<i class="fa-solid fa-volume-high"></i>`) { document.getElementById('lose-sound').play(); }
     }
     else {
         newButton.style.visibility = "visible";
