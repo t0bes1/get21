@@ -82,6 +82,10 @@ a:hover {
     font-size: 5rem;
 }
 
+#sound-toggle:hover {
+    color: white;
+}
+
 #info-modal {
     display: flex;
     align-items: center;

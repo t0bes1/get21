@@ -105,6 +105,9 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 | Modal | | | | | |
 | Game rules are shown  |The "i" button is clicked | The rules of the game are shown to the player |Yes |Yes | |
 | Game rules are hidden |The screen is clicked when the modal is open | The rules of the game are no longer shown to the player and the game is playable |Yes |Yes | |
+| Sound | | | | | |
+| Sound plays  |The sound toggle is clicked on | Sounds play when hands are won or lost |Yes |Yes | |
+| Sound does not play |The sound toggle is left off  | Sounds do not play when hands are won or lost |Yes |Yes | |
 | Footer | | | | | |
 | Github icon in the footer | Click on the Github icon | The user is redirected to the Github page | Yes | Yes | - |
 

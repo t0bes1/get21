@@ -15,6 +15,7 @@ const houseBox1 = document.getElementById('house-card-1-img');
 const houseBox2 = document.getElementById('house-card-2-img');
 const houseBox3 = document.getElementById('house-card-3-img');
 const newCard = "assets/images/back_of_card.png";
+const soundOn = `<i class="fa-solid fa-volume-high"></i>`;
 const audioTog = document.getElementById("sound-toggle");
 
 /**
@@ -130,7 +131,7 @@ dialog.addEventListener("click", e => {
  */
 function soundTog() {
     if (audioTog.innerHTML == `<i class="fa-solid fa-volume-xmark"></i>`) {
-        audioTog.innerHTML = `<i class="fa-solid fa-volume-high"></i>`;
+        audioTog.innerHTML = soundOn;
     }
     else {
         audioTog.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
@@ -236,11 +237,12 @@ function calculatePlayerTotal(playerCard3) {
 }
 
 /**
- * player total is checked whether they are bust. If so, end game. If not, game continues.
+ * player total is checked whether they are bust. If so, end game. If not, game continues
  */
 function checkPlayerTotal(finalPlayerScore) {
     if (finalPlayerScore > 21) {
         resultBox.textContent = `You're Bust! ${finalPlayerScore} is over 21 ... You Lose!`;
+        if (audioTog.innerHTML == soundOn) { document.getElementById('lose-hand-sound').play(); }
         reduceScore();
     } else {
         houseCards();
@@ -248,17 +250,19 @@ function checkPlayerTotal(finalPlayerScore) {
 }
 
 /**
- * player total is compared to house total and game result is evaluated.
+ * player total is compared to house total and game result is evaluated
  */
 function checkGameResult() {
     let playerResult = parseInt(playerScoreBox.innerText);
     let houseResult = parseInt(houseScoreBox.innerText);
     if (playerResult > houseResult) {
         resultBox.textContent = `Win :) ... ${playerResult} beats ${houseResult}`;
+        if (audioTog.innerHTML == soundOn) { document.getElementById('win-hand-sound').play(); }
         growScore();
     }
     else {
         resultBox.textContent = `Lose :( ... ${houseResult} beats ${playerResult}`;
+        if (audioTog.innerHTML == soundOn) { document.getElementById('lose-hand-sound').play(); }
         reduceScore();
     }
 }
@@ -291,7 +295,7 @@ function checkTotal(newScore) {
         bankBox.style.borderColor = "darkgreen";
         restartButton.style.visibility = "visible";
         console.log(audioTog.innerHTML);
-        if (audioTog.innerHTML == `<i class="fa-solid fa-volume-high"></i>`) { document.getElementById('win-sound').play(); }
+        if (audioTog.innerHTML == soundOn) { document.getElementById('win-game-sound').play(); }
     }
     else if (newScore === 0) {
         resultBox.textContent = "You're Bust! Try Again?";
@@ -299,7 +303,7 @@ function checkTotal(newScore) {
         resultBox.style.border = "none";
         bankBox.style.borderColor = "red";
         restartButton.style.visibility = "visible";
-        if (audioTog.innerHTML == `<i class="fa-solid fa-volume-high"></i>`) { document.getElementById('lose-sound').play(); }
+        if (audioTog.innerHTML == soundOn) { document.getElementById('lose-game-sound').play(); }
     }
     else {
         newButton.style.visibility = "visible";
